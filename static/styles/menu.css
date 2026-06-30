@@ -1,20 +1,10 @@
-/*
-================================================================================
-Hoja de estilos para el menu de juegos. Define la apariencia
-general: fondo oscuro, tarjeta con borde azul, botones con efectos hover,
-y estilos para los contenidos de los juegos. Todos los comentarios explican
-cada selector, propiedad y valor.
-================================================================================
-*/
-
-/* --- RESETEO DE ESTILOS: elimina margenes y padding por defecto --- */
+/* --- RESETEO DE ESTILOS --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* --- ESTILO DEL CUERPO: fondo oscuro, centrado y fuente limpia --- */
 body {
     background: #0a0a0a;
     font-family: Arial, sans-serif;
@@ -25,7 +15,6 @@ body {
     padding: 20px;
 }
 
-/* --- CONTENEDOR PRINCIPAL: tarjeta con borde azul y sombra --- */
 .container {
     background: #111;
     border: 2px solid #0066ff;
@@ -36,7 +25,6 @@ body {
     box-shadow: 0 0 30px rgba(0, 102, 255, 0.2);
 }
 
-/* --- TITULO PRINCIPAL: grande, azul y con borde inferior --- */
 h1 {
     color: #0088ff;
     text-align: center;
@@ -46,7 +34,6 @@ h1 {
     padding-bottom: 10px;
 }
 
-/* --- BOTON GENERICO: usado para menu, volver y enlaces --- */
 .btn {
     display: block;
     background: #0a0a0a;
@@ -63,7 +50,6 @@ h1 {
     cursor: pointer;
 }
 
-/* --- HOVER GENERICO (se aplica a botones sin clase específica) --- */
 .btn:hover {
     background: #0066ff;
     color: white;
@@ -71,97 +57,17 @@ h1 {
     box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
 }
 
-/* ================================================================
-   HOVERS PERSONALIZADOS PARA CADA BOTON DEL MENU PRINCIPAL
-   ================================================================ */
+/* Hovers personalizados para cada botón */
+.btn-juego1:hover { background: #e74c3c; color: white; transform: scale(1.02); box-shadow: 0 0 20px rgba(231, 76, 60, 0.4); }
+.btn-juego2:hover { background: #2ecc71; color: white; transform: scale(1.02); box-shadow: 0 0 20px rgba(46, 204, 113, 0.4); }
+.btn-juego3:hover { background: #3498db; color: white; transform: scale(1.02); box-shadow: 0 0 20px rgba(52, 152, 219, 0.4); }
+.btn-juego4:hover { background: #f39c12; color: white; transform: scale(1.02); box-shadow: 0 0 20px rgba(243, 156, 18, 0.4); }
+.btn-juego5:hover { background: #9b59b6; color: white; transform: scale(1.02); box-shadow: 0 0 20px rgba(155, 89, 182, 0.4); }
+.btn-juego6:hover { background: #1abc9c; color: white; transform: scale(1.02); box-shadow: 0 0 20px rgba(26, 188, 156, 0.4); }
+.btn-avatar:hover { background: #f1c40f; color: white; transform: scale(1.02); box-shadow: 0 0 20px rgba(241, 196, 15, 0.4); }
+.btn-externo:hover { background: #e91e63; color: white; transform: scale(1.02); box-shadow: 0 0 20px rgba(233, 30, 99, 0.4); }
+.btn-canva:hover { background: #00bcd4; color: white; transform: scale(1.02); box-shadow: 0 0 20px rgba(0, 188, 212, 0.4); }
 
-/* Juego 1 – Trivias (Rojo) */
-.btn-juego1:hover {
-    background: #e74c3c;
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(231, 76, 60, 0.4);
-}
-
-/* Juego 2 – Memorama (Verde) */
-.btn-juego2:hover {
-    background: #2ecc71;
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
-}
-
-/* Juego 3 – Decisión (Azul) */
-.btn-juego3:hover {
-    background: #3498db;
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(52, 152, 219, 0.4);
-}
-
-/* Juego 4 – Flappy Bird (Naranja) */
-.btn-juego4:hover {
-    background: #f39c12;
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
-}
-
-/* Juego 5 – Viborita (Púrpura) */
-.btn-juego5:hover {
-    background: #9b59b6;
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(155, 89, 182, 0.4);
-}
-
-/* Juego 6 – Dibujando y programando (Turquesa) */
-.btn-juego6:hover {
-    background: #1abc9c;
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(26, 188, 156, 0.4);
-}
-
-/* Avatares – (Amarillo) */
-.btn-avatar {
-    border-color: #0088ff;
-    color: #88ddff;
-    font-size: 1.2rem;
-}
-.btn-avatar:hover {
-    background: #f1c40f;
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
-}
-
-/* Juegos Externos – (Rosa) */
-.btn-externo {
-    border-color: #0088ff;
-    color: #88ddff;
-    font-size: 1.2rem;
-}
-.btn-externo:hover {
-    background: #e91e63;
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(233, 30, 99, 0.4);
-}
-
-/* Canva – (Celeste) */
-.btn-canva {
-    border-color: #0059ff;
-    color: #8894ff;
-}
-.btn-canva:hover {
-    background: #00bcd4;
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
-}
-
-/* --- BOTON DE VOLVER (usado dentro de los contenidos de juegos) --- */
 .back {
     border-color: #334466;
     color: #6688aa;
@@ -174,7 +80,6 @@ h1 {
     box-shadow: 0 0 20px rgba(51, 68, 102, 0.4);
 }
 
-/* --- SEPARADOR: linea horizontal decorativa --- */
 .separator {
     border: none;
     border-top: 1px solid #0066ff;
@@ -182,7 +87,6 @@ h1 {
     opacity: 0.3;
 }
 
-/* --- CONTENEDOR DE CONTENIDO DE CADA JUEGO --- */
 .content {
     display: none;
     text-align: center;
@@ -191,7 +95,6 @@ h1 {
     display: block;
 }
 
-/* --- ESTILOS PARA EL TEXTO DENTRO DEL CONTENIDO --- */
 .content h2 {
     color: #0088ff;
     font-size: 1.8rem;
@@ -208,7 +111,6 @@ h1 {
     margin: 15px 0;
 }
 
-/* --- PIE DE PAGINA: texto pequeño y discreto --- */
 .footer {
     color: #334466;
     text-align: center;
@@ -216,42 +118,14 @@ h1 {
     font-size: 0.8rem;
 }
 
-/* ================================================================
-   RESPONSIVE: PANTALLAS PEQUEÑAS (hasta 600px)
-   ================================================================ */
 @media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-    .container {
-        padding: 20px 15px;
-        border-radius: 12px;
-    }
-    h1 {
-        font-size: 1.5rem;
-        margin-bottom: 18px;
-        padding-bottom: 8px;
-    }
-    .btn {
-        padding: 12px 16px;
-        font-size: 0.95rem;
-        margin: 8px 0;
-    }
-    .btn-avatar,
-    .btn-externo {
-        font-size: 1rem;
-    }
-    .content h2 {
-        font-size: 1.4rem;
-    }
-    .content p {
-        font-size: 0.9rem;
-    }
-    .content .big-emoji {
-        font-size: 40px;
-    }
-    .footer {
-        font-size: 0.7rem;
-        margin-top: 15px;
-    }
+    body { padding: 10px; }
+    .container { padding: 20px 15px; border-radius: 12px; }
+    h1 { font-size: 1.5rem; margin-bottom: 18px; padding-bottom: 8px; }
+    .btn { padding: 12px 16px; font-size: 0.95rem; margin: 8px 0; }
+    .btn-avatar, .btn-externo { font-size: 1rem; }
+    .content h2 { font-size: 1.4rem; }
+    .content p { font-size: 0.9rem; }
+    .content .big-emoji { font-size: 40px; }
+    .footer { font-size: 0.7rem; margin-top: 15px; }
 }
