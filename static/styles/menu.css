@@ -10,234 +10,248 @@ cada selector, propiedad y valor.
 /* --- RESETEO DE ESTILOS: elimina margenes y padding por defecto --- */
 * {
     margin: 0;
-    /* Elimina el margen exterior de todos los elementos */
     padding: 0;
-    /* Elimina el relleno interior de todos los elementos */
     box-sizing: border-box;
-    /* Hace que el padding y el borde se incluyan en el ancho y alto total del elemento */
 }
 
 /* --- ESTILO DEL CUERPO: fondo oscuro, centrado y fuente limpia --- */
 body {
     background: #0a0a0a;
-    /* Fondo negro profundo para toda la pagina */
     font-family: Arial, sans-serif;
-    /* Fuente sans-serif para mejor legibilidad */
     display: flex;
-    /* Activa el modelo de caja flexible para centrar el contenido */
     justify-content: center;
-    /* Centra el contenido horizontalmente */
     align-items: center;
-    /* Centra el contenido verticalmente */
     min-height: 100vh;
-    /* Altura minima igual al 100% de la ventana grafica */
     padding: 20px;
-    /* Espacio de relleno alrededor del contenido para evitar que toque los bordes en pantallas pequenas */
 }
 
 /* --- CONTENEDOR PRINCIPAL: tarjeta con borde azul y sombra --- */
 .container {
     background: #111;
-    /* Fondo ligeramente mas claro que el body, para dar contraste */
     border: 2px solid #0066ff;
-    /* Borde solido de 2 pixeles de ancho y color azul brillante */
     border-radius: 15px;
-    /* Esquinas redondeadas con radio de 15 pixeles */
     padding: 30px 40px;
-    /* Relleno interior: 30 pixeles arriba/abajo, 40 pixeles izquierda/derecha */
     max-width: 700px;
-    /* Ancho maximo de 700 pixeles para evitar que se estire demasiado */
     width: 100%;
-    /* El ancho ocupa todo el espacio disponible hasta el maximo definido */
     box-shadow: 0 0 30px rgba(0, 102, 255, 0.2);
-    /* Sombra exterior con color azul y transparencia, difuminada a 30 pixeles */
 }
 
 /* --- TITULO PRINCIPAL: grande, azul y con borde inferior --- */
 h1 {
     color: #0088ff;
-    /* Color azul claro para el titulo */
     text-align: center;
-    /* Alineacion centrada del texto */
     font-size: 2rem;
-    /* Tamano de fuente de 2 unidades 'rem' (relativo al tamaño base) */
     margin-bottom: 25px;
-    /* Margen inferior de 25 pixeles para separar del contenido siguiente */
     border-bottom: 2px solid #0066ff;
-    /* Borde inferior solido de 2 pixeles de ancho y color azul */
     padding-bottom: 10px;
-    /* Relleno inferior de 10 pixeles entre el texto y el borde */
 }
 
 /* --- BOTON GENERICO: usado para menu, volver y enlaces --- */
 .btn {
     display: block;
-    /* El boton se comporta como un bloque, ocupando todo el ancho disponible */
     background: #0a0a0a;
-    /* Fondo oscuro para el boton */
     border: 2px solid #0066ff;
-    /* Borde solido azul de 2 pixeles */
     color: #66ccff;
-    /* Color del texto azul claro */
     padding: 14px 20px;
-    /* Relleno interior: 14 pixeles arriba/abajo, 20 pixeles izquierda/derecha */
     margin: 10px 0;
-    /* Margen vertical de 10 pixeles arriba y abajo para separar botones entre si */
     border-radius: 10px;
-    /* Esquinas redondeadas con radio de 10 pixeles */
     text-align: center;
-    /* Texto centrado dentro del boton */
     text-decoration: none;
-    /* Elimina el subrayado predeterminado de los enlaces */
     font-size: 1.1rem;
-    /* Tamano de fuente de 1.1 rem */
     font-weight: bold;
-    /* Texto en negrita para mayor enfasis */
     transition: all 0.3s;
-    /* Transicion suave de 0.3 segundos para todos los cambios de propiedades */
     cursor: pointer;
-    /* Cambia el cursor a una mano al pasar sobre el boton, indicando que es clickeable */
 }
 
-/* --- BOTON EN HOVER: cambia de color y se ilumina --- */
+/* --- HOVER GENERICO (se aplica a botones sin clase específica) --- */
 .btn:hover {
     background: #0066ff;
-    /* Fondo azul brillante al pasar el mouse */
     color: white;
-    /* Texto blanco para contraste */
     transform: scale(1.02);
-    /* Aumenta ligeramente el tamaño del boton (2 por ciento) */
     box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
-    /* Sombra azul mas intensa alrededor del boton */
 }
 
-/* --- BOTON ESPECIAL PARA AVATARES: color ligeramente diferente --- */
+/* ================================================================
+   HOVERS PERSONALIZADOS PARA CADA BOTON DEL MENU PRINCIPAL
+   ================================================================ */
+
+/* Juego 1 – Trivias (Rojo) */
+.btn-juego1:hover {
+    background: #e74c3c;
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.4);
+}
+
+/* Juego 2 – Memorama (Verde) */
+.btn-juego2:hover {
+    background: #2ecc71;
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
+}
+
+/* Juego 3 – Decisión (Azul) */
+.btn-juego3:hover {
+    background: #3498db;
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Juego 4 – Flappy Bird (Naranja) */
+.btn-juego4:hover {
+    background: #f39c12;
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
+}
+
+/* Juego 5 – Viborita (Púrpura) */
+.btn-juego5:hover {
+    background: #9b59b6;
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(155, 89, 182, 0.4);
+}
+
+/* Juego 6 – Dibujando y programando (Turquesa) */
+.btn-juego6:hover {
+    background: #1abc9c;
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(26, 188, 156, 0.4);
+}
+
+/* Avatares – (Amarillo) */
 .btn-avatar {
     border-color: #0088ff;
-    /* Borde azul mas brillante que el generico */
     color: #88ddff;
-    /* Texto azul muy claro */
     font-size: 1.2rem;
-    /* Tamano de fuente ligeramente mayor que el generico */
 }
-
-/* --- BOTON AVATAR EN HOVER: fondo azul brillante --- */
 .btn-avatar:hover {
-    background: #0088ff;
-    /* Fondo azul brillante al hacer hover, sobrescribiendo el color del hover generico */
+    background: #f1c40f;
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
 }
 
-/* --- BOTON PARA EXTERNOS Y YOUTUBE: estilo similar a avatares --- */
+/* Juegos Externos – (Rosa) */
 .btn-externo {
     border-color: #0088ff;
-    /* Mismo borde azul brillante */
     color: #88ddff;
-    /* Mismo texto azul claro */
     font-size: 1.2rem;
-    /* Tamano mayor */
 }
-
 .btn-externo:hover {
-    background: #0088ff;
-    /* Fondo azul brillante en hover */
-}
-
-/* --- BOTON PARA CANVA: color distintivo rosado --- */
-.btn-canva {
-    border-color: #ff66aa;
-    /* Borde rosado para diferenciar de los demas botones */
-    color: #ff88bb;
-    /* Texto rosado claro */
-}
-
-.btn-canva:hover {
-    background: #ff66aa;
-    /* Fondo rosado en hover */
+    background: #e91e63;
     color: white;
-    /* Texto blanco para contraste */
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(233, 30, 99, 0.4);
+}
+
+/* Canva – (Celeste) */
+.btn-canva {
+    border-color: #0059ff;
+    color: #8894ff;
+}
+.btn-canva:hover {
+    background: #00bcd4;
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
 }
 
 /* --- BOTON DE VOLVER (usado dentro de los contenidos de juegos) --- */
 .back {
     border-color: #334466;
-    /* Borde azul oscuro, menos llamativo */
     color: #6688aa;
-    /* Texto azul grisaceo */
     margin-top: 20px;
-    /* Margen superior extra para separarlo del contenido */
 }
-
-/* --- BOTON VOLVER EN HOVER: se oscurece pero mantiene el estilo --- */
 .back:hover {
     background: #334466;
-    /* Fondo azul oscuro en hover */
     color: white;
-    /* Texto blanco */
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(51, 68, 102, 0.4);
 }
 
 /* --- SEPARADOR: linea horizontal decorativa --- */
 .separator {
     border: none;
-    /* Elimina el borde predeterminado del elemento hr */
     border-top: 1px solid #0066ff;
-    /* Agrega una linea superior de 1 pixel de ancho y color azul */
     margin: 15px 0;
-    /* Margen vertical de 15 pixeles arriba y abajo */
     opacity: 0.3;
-    /* Transparencia del 30 por ciento para que no sea demasiado intenso */
 }
 
-/* --- CONTENEDOR DE CONTENIDO DE CADA JUEGO: se muestra cuando
-    la pagina correspondiente esta activa. Por defecto oculto. --- */
+/* --- CONTENEDOR DE CONTENIDO DE CADA JUEGO --- */
 .content {
     display: none;
-    /* Oculta el contenido por defecto */
     text-align: center;
-    /* Centra el texto dentro del contenedor */
 }
-
-/* --- CONTENIDO ACTIVO: se muestra cuando la clase 'active' esta presente --- */
 .content.active {
     display: block;
-    /* Muestra el contenido como un bloque, anulando el display none */
 }
 
 /* --- ESTILOS PARA EL TEXTO DENTRO DEL CONTENIDO --- */
 .content h2 {
     color: #0088ff;
-    /* Azul claro para los subtitulos de los juegos */
     font-size: 1.8rem;
-    /* Tamano grande */
     margin: 15px 0;
-    /* Margen vertical de 15 pixeles */
 }
-
 .content p {
     color: #88ccff;
-    /* Azul claro para los parrafos */
     margin: 10px 0;
-    /* Margen vertical de 10 pixeles */
     line-height: 1.6;
-    /* Interlineado de 1.6 para mejorar la legibilidad */
 }
-
 .content .big-emoji {
     font-size: 50px;
-    /* Tamano grande para los emojis que representan cada juego */
     display: block;
-    /* Se comporta como bloque, ocupando su propia linea */
     margin: 15px 0;
-    /* Margen vertical de 15 pixeles */
 }
 
-/* --- PIE DE PAGINA: texto pequeno y discreto --- */
+/* --- PIE DE PAGINA: texto pequeño y discreto --- */
 .footer {
     color: #334466;
-    /* Azul oscuro tenue para el pie de pagina */
     text-align: center;
-    /* Centrado */
     margin-top: 20px;
-    /* Margen superior de 20 pixeles para separarlo del contenido anterior */
     font-size: 0.8rem;
-    /* Tamano de fuente pequeno */
+}
+
+/* ================================================================
+   RESPONSIVE: PANTALLAS PEQUEÑAS (hasta 600px)
+   ================================================================ */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 18px;
+        padding-bottom: 8px;
+    }
+    .btn {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        margin: 8px 0;
+    }
+    .btn-avatar,
+    .btn-externo {
+        font-size: 1rem;
+    }
+    .content h2 {
+        font-size: 1.4rem;
+    }
+    .content p {
+        font-size: 0.9rem;
+    }
+    .content .big-emoji {
+        font-size: 40px;
+    }
+    .footer {
+        font-size: 0.7rem;
+        margin-top: 15px;
+    }
 }
