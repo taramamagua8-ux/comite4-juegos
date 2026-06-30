@@ -16,7 +16,11 @@ correspondientes.
 */
 window.onload = function() {
     // OBTIENE LA RUTA ACTUAL SIN EL DOMINIO
-    var page = new URLSearchParams(window.location.search).get('page') || '';
+    var path = window.location.pathname;
+    // Ejemplo: si la URL es 'http://dominio/juego1', path sera '/juego1'
+    // Elimina la barra inicial para obtener el nombre de la pagina
+    var page = path.substring(1);
+    // Ejemplo: si path es '/juego1', page sera 'juego1'; si es '/', page sera ''
 
     // OBTIENE REFERENCIAS A LOS ELEMENTOS DEL DOM
     var menu = document.getElementById('menu');
