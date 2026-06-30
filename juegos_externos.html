@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+Estructura principal de la pagina de juegos externos.
+Contiene titulo, botones para cada juego (Kahoot, Crucigrama, Educaplay),
+contenedores de contenido (resumen, QR y enlace web) y un boton de volver.
+Los estilos y comportamientos estan en archivos externos ubicados en las
+carpetas static/styles/ y static/js/ respectivamente. Las imagenes QR se
+sirven desde static/img/qr/ usando url_for.
+================================================================================
+-->
+<html lang="es">
+<head>
+    <!-- METADATOS BASICOS -->
+    <meta charset="UTF-8">
+    <!-- Establece la codificacion UTF-8 para soportar caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura el viewport para dispositivos moviles, ajustando el ancho al dispositivo -->
+    <title>Juegos Externos</title>
+    <!-- Titulo que se muestra en la pestaña del navegador -->
+
+    <!-- ================================================================
+        REFERENCIA A LA HOJA DE ESTILOS EXTERNA (url_for)
+        ================================================================ -->
+    <link rel="stylesheet" href="./static/styles/juegos_externos.css">
+    <!-- Vincula el archivo juegos_externos.css desde static/styles/ -->
+
+</head>
+<body>
+
+    <!-- ================================================================
+        CONTENEDOR PRINCIPAL: agrupa titulo, botones, contenidos y pie.
+        ================================================================ -->
+    <div class="container">
+        <!-- Contenedor con borde azul y sombra que envuelve todo el contenido de la pagina -->
+
+        <!-- TITULO DE LA PAGINA -->
+        <h1>🎮 Juegos Externos</h1>
+        <!-- Encabezado principal con emoji de control y el titulo -->
+
+        <!-- ================================================================
+            BOTON PARA KAHOOT: al hacer clic, muestra/oculta el contenido
+            de Kahoot (resumen, QR y enlace web).
+            ================================================================ -->
+        <button class="btn btn-game" id="btn-kahoot">
+            <!-- Clase 'btn' para estilo generico, 'btn-game' para estilo especifico de juego -->
+            📊 Kahoot
+            <!-- Texto del boton con emoji de graficos -->
+        </button>
+
+        <!-- CONTENIDO DE KAHOOT: inicialmente oculto. Contiene resumen,
+            imagen QR y boton de enlace web. -->
+        <div class="game-content" id="content-kahoot">
+            <!-- Contenedor de contenido; por defecto oculto con display:none -->
+            <h2>📊 Kahoot</h2>
+            <!-- Subtitulo del juego -->
+            <p>
+                Cultura general del programador: historia de la computación, 
+                grandes personajes del software y curiosidades geek. 
+                Demuestra que no solo sabes escribir código, 
+                sino que conoces sus orígenes.
+            </p>
+            <!-- Parrafo con resumen descriptivo del juego -->
+            <img src="./static/img/qr/kahoot.jpeg" alt="QR Code para Kahoot" class="qr-img">
+            <!-- Imagen del codigo QR; se usa url_for para apuntar a static/img/qr/kahoot.png -->
+            <a href="https://kahoot.it/challenge/0500223?challenge-id=63d91bb1-13d1-47cf-ab8b-ba97b3f34085_1782530323266" target="_blank" class="btn-web">
+                <!-- Enlace externo que se abre en nueva pestaña; clase btn-web para estilo de boton web -->
+                🔗 Ir a Kahoot
+                <!-- Texto del enlace con emoji de enlace -->
+            </a>
+        </div>
+
+        <!-- ================================================================
+            BOTON PARA CRUCIGRAMA: al hacer clic, muestra/oculta el
+            contenido del crucigrama (resumen, QR y enlace web).
+            ================================================================ -->
+        <button class="btn btn-game" id="btn-crucigrama">
+            🧩 Crucigrama
+            <!-- Emoji de puzzle -->
+        </button>
+
+        <!-- CONTENIDO DEL CRUCIGRAMA: inicialmente oculto -->
+        <div class="game-content" id="content-crucigrama">
+            <h2>🧩 Crucigrama</h2>
+            <p>
+                Crucigrama interactivo con preguntas sobre programacion
+                y logica. Pon a prueba tu conocimiento mientras resuelves
+                cada palabra.
+            </p>
+            <!-- Imagen QR con ruta usando url_for -->
+            <img src="./static/img/qr/qr_crucigrama.jpeg" alt="QR Code para Crucigrama" class="qr-img">
+            <!-- Enlace web al crucigrama -->
+            <a href="https://es.educaplay.com/recursos-educativos/29481125-programacion.html" target="_blank" class="btn-web">
+                🔗 Ir al Crucigrama
+            </a>
+        </div>
+
+        <!-- ================================================================
+            BOTON PARA EDUCAPLAY: al hacer clic, muestra/oculta el
+            contenido de Educaplay (resumen, QR y enlace web).
+            ================================================================ -->
+        <button class="btn btn-game" id="btn-educaplay">
+            🎯 Educaplay
+            <!-- Emoji de diana -->
+        </button>
+
+        <!-- CONTENIDO DE EDUCAPLAY: inicialmente oculto -->
+        <div class="game-content" id="content-educaplay">
+            <h2>🎯 Educaplay</h2>
+            <p>
+                Educaplay es una plataforma que permite crear y jugar
+                actividades educativas como mapas, adivinanzas y
+                crucigramas. Perfecto para aprender jugando.
+            </p>
+            <!-- Imagen QR con url_for -->
+            <img src="./static/img/qr/educaplay_sopadeletras.jpeg" alt="QR Code para Educaplay" class="qr-img">
+            <!-- Enlace web a Educaplay -->
+            <a href="https://es.educaplay.com/recursos-educativos/29644651-sopa_de_letras_de_programacion.html" target="_blank" class="btn-web">
+                🔗 Ir a Educaplay
+            </a>
+        </div>
+
+        <!-- ================================================================
+            SEPARADOR DECORATIVO: linea horizontal para dividir secciones.
+            ================================================================ -->
+        <hr class="separator">
+        <!-- Linea horizontal con estilo separator, visible solo como decoracion -->
+
+        <!-- ================================================================
+            BOTON DE VOLVER: redirige al menu principal (raiz del sitio).
+            ================================================================ -->
+        <a href="./index.html" class="btn back">
+            <!-- Enlace a la ruta raiz con estilo 'btn' y 'back' para apariencia de volver -->
+            ← Volver al menú
+            <!-- Texto con flecha izquierda -->
+        </a>
+
+        <!-- ================================================================
+            PIE DE PAGINA: informacion de atribucion.
+            ================================================================ -->
+        <div class="footer">⚡ Comité 4 · Juegos Externos ⚡</div>
+        <!-- Texto pequeño con el nombre del comité -->
+
+    </div>
+    <!-- Fin del contenedor principal -->
+
+    <!-- ================================================================
+        REFERENCIA AL ARCHIVO DE JAVASCRIPT EXTERNO (url_for)
+        ================================================================ -->
+    <script src="./static/js/juegos_externos.js"></script>
+    <!-- Vincula el archivo juegos_externos.js desde static/js/ -->
+
+</body>
+</html>

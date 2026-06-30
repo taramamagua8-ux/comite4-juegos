@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+Estructura principal del menu de juegos. Contiene el menu con
+enlaces a juegos internos (juego1 a juego6, avatares) y a nuevas secciones
+(Juegos Externos, Menu YouTube y Canva). Ademas, incluye contenedores para
+mostrar el contenido de cada juego interno mediante la clase 'active'.
+Los estilos y comportamientos estan en archivos externos ubicados en las
+carpetas static/styles/ y static/js/ respectivamente.
+================================================================================
+-->
+<html lang="es">
+<head>
+    <!-- METADATOS BASICOS -->
+    <meta charset="UTF-8">
+    <!-- Establece la codificacion UTF-8 para soportar acentos y simbolos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la vista para dispositivos moviles, ajustando el ancho al dispositivo -->
+    <title>Menú de Juegos</title>
+    <!-- Titulo que se muestra en la pestaña del navegador -->
+
+    <!-- ================================================================
+        REFERENCIA A LA HOJA DE ESTILOS EXTERNA
+        ================================================================ -->
+    <link rel="stylesheet" href="./static/styles/menu.css">
+    <!-- Vincula el archivo menu.css desde la carpeta static/styles/ -->
+
+</head>
+<body>
+
+<!-- ================================================================
+    CONTENEDOR PRINCIPAL: agrupa el menu y los contenidos de los juegos.
+    ================================================================ -->
+<div class="container">
+    <!-- Contenedor con borde azul y sombra, que envuelve todo el contenido de la pagina -->
+
+    <!-- ================================================================
+        MENU PRINCIPAL: se muestra cuando no hay parametro 'page' o
+        cuando la pagina es la raiz ('/'). Contiene enlaces a todos los
+        juegos y a las nuevas secciones.
+        ================================================================ -->
+    <div id="menu">
+        <!-- Este div contiene el menu principal; se oculta cuando se muestra un juego interno -->
+
+        <!-- Titulo del menu -->
+        <h1>🎮 Menú</h1>
+        <!-- Encabezado principal con un emoji de control y la palabra "Menú" -->
+
+        <!-- BOTON PARA JUEGO 1 (Trivias) -->
+        <a href="./trivias.html" class="btn"> Trivias</a>
+        <!-- Enlace a la ruta /juego1; se muestra como un boton con estilo 'btn' -->
+
+        <!-- BOTON PARA JUEGO 2 (Memorama) -->
+        <a href="./index.html?page=juego2" class="btn"> Memorama</a>
+        <!-- Enlace a /juego2 -->
+
+        <!-- BOTON PARA JUEGO 3 (Juego de decision) -->
+        <a href="./decision.html" class="btn"> Juego de decisión</a>
+        <!-- Enlace a /juego3 -->
+
+        <!-- BOTON PARA JUEGO 4 (Flappy Bird) -->
+        <a href="./index.html?page=juego4" class="btn"> Flappy Bird</a>
+        <!-- Enlace a /juego4 -->
+
+        <!-- BOTON PARA JUEGO 5 (Viborita) -->
+        <a href="./index.html?page=juego5" class="btn">  Viborita</a>
+        <!-- Enlace a /juego5 -->
+
+        <!-- BOTON PARA JUEGO 6 (Dibujando y programando) -->
+        <a href="./index.html?page=juego6" class="btn">  Dibujando y programando</a>
+        <!-- Enlace a /juego6 -->
+
+        <!-- SEPARADOR DECORATIVO -->
+        <hr class="separator">
+        <!-- Linea horizontal con estilo separator para dividir secciones -->
+
+        <!-- BOTON PARA AVATARES -->
+        <a href="./index.html?page=avatares" class="btn btn-avatar">👤 Avatares</a>
+        <!-- Enlace a /avatares con clase adicional btn-avatar para estilo diferenciado -->
+
+        <!-- SEPARADOR DECORATIVO -->
+        <hr class="separator">
+
+        <!-- ================================================================
+            NUEVOS BOTONES PARA SECCIONES ADICIONALES
+            ================================================================ -->
+
+        <!-- BOTON PARA JUEGOS EXTERNOS: redirige a la pagina /juegos_externos -->
+        <a href="./juegos_externos.html" class="btn btn-externo">🌐 Juegos Externos</a>
+        <!-- Enlace a /juegos_externos con clase btn-externo -->
+
+        <!-- BOTON PARA CANVA: redirige a una presentacion en Canva (abre en nueva pestaña) -->
+        <a href="https://canva.link/whf67mxnk3e12l4" target="_blank" class="btn btn-canva">🖼️ Presentación Canva</a>
+        <!-- Enlace externo a Canva con target="_blank" para abrir en nueva pestaña; usa clase btn-canva -->
+
+        <!-- SEPARADOR DECORATIVO -->
+        <hr class="separator">
+
+        <!-- PIE DE PAGINA DEL MENU -->
+        <div class="footer">⚡ Comité 4 ⚡</div>
+        <!-- Texto pequeño con el nombre del comité -->
+    </div>
+    <!-- Fin del menu principal -->
+
+    <!-- ================================================================
+        CONTENEDOR DE CONTENIDO DE JUEGOS INTERNOS:
+        Estos divs se muestran cuando el parametro 'page' coincide con
+        el ID del juego. Cada uno contiene su propio contenido y un
+        boton para volver al menu.
+        ================================================================ -->
+    <div id="page-content">
+        <!-- Este div agrupa todos los contenidos de los juegos; se muestra solo cuando hay un juego activo -->
+
+        <!-- CONTENIDO PARA JUEGO 1 (Trivias) -->
+        <div class="content" id="page-juego1">
+            <!-- Contenedor de contenido para juego1; inicialmente oculto por la clase 'content' -->
+            <span class="big-emoji">🕹️</span>
+            <!-- Emoji grande que representa el juego -->
+            <h2>Trivias</h2>
+            <!-- Titulo del juego -->
+            <p>Contenido del juego </p>
+            <!-- Parrafo placeholder -->
+            <p style="color: #4488aa; font-size: 0.9rem;">¡Pon a prueba tus conocimientos en programación con estas trivias!</p>
+            <!-- Parrafo con estilo inline para color y tamaño -->
+            <a href="./index.html" class="btn back">← Volver</a>
+            <!-- Boton para volver al menu raiz -->
+        </div>
+
+        <!-- CONTENIDO PARA JUEGO 2 (Memorama) -->
+        <div class="content" id="page-juego2">
+            <span class="big-emoji">🎯</span>
+            <h2>Memorama</h2>
+            <p>Contenido del juego </p>
+            <p style="color: #4488aa; font-size: 0.9rem;"> </p>
+            <a href="./index.html" class="btn back">← Volver</a>
+        </div>
+
+        <!-- CONTENIDO PARA JUEGO 3 (Juego de decision) -->
+        <div class="content" id="page-juego3">
+            <span class="big-emoji">👀</span>
+            <h2>Decisión</h2>
+            <p>Contenido del juego </p>
+            <p style="color: #4488aa; font-size: 0.9rem;"> </p>
+            <a href="./index.html" class="btn back">← Volver</a>
+        </div>
+
+        <!-- CONTENIDO PARA JUEGO 4 (Flappy Bird) -->
+        <div class="content" id="page-juego4">
+            <span class="big-emoji">🏆</span>
+            <h2>Flappy Bird</h2>
+            <p>Contenido del juego 4</p>
+            <p style="color: #4488aa; font-size: 0.9rem;">juego</p>
+            <a href="./index.html" class="btn back">← Volver</a>
+        </div>
+
+        <!-- CONTENIDO PARA JUEGO 5 (Viborita) -->
+        <div class="content" id="page-juego5">
+            <span class="big-emoji">⚡</span>
+            <h2>Viborita</h2>
+            <p>Contenido del juego 5</p>
+            <p style="color: #4488aa; font-size: 0.9rem;"> juego</p>
+            <a href="./index.html" class="btn back">← Volver</a>
+        </div>
+
+        <!-- CONTENIDO PARA JUEGO 6 (Dibujando y programando) -->
+        <div class="content" id="page-juego6">
+            <span class="big-emoji">✏️</span>
+            <h2>Dibujando y programando</h2>
+            <p>Contenido del juego </p>
+            <p style="color: #4488aa; font-size: 0.9rem;"> ¡Anímate a dibujar!</p>
+            <a href="./index.html" class="btn back">← Volver</a>
+        </div>
+
+        <!-- CONTENIDO PARA AVATARES -->
+        <div class="content" id="page-avatares">
+            <!-- Contenido para avatares: enlace a Picrew -->
+            <a href="https://picrew.me/en" target="_blank" class="btn btn-canva">🖼️ Crea tu propio avatar!</a>
+            <!-- Enlace externo a Picrew para crear avatares -->
+            <a href="./index.html" class="btn back">← Volver</a>
+            <!-- Boton para volver al menu -->
+        </div>
+
+    </div>
+    <!-- Fin de page-content -->
+
+</div>
+<!-- Fin del contenedor principal -->
+
+<!-- ================================================================
+    REFERENCIA AL ARCHIVO DE JAVASCRIPT EXTERNO 
+    ================================================================ -->
+<script src="./static/js/menu.js"></script>
+<!-- Vincula el archivo menu.js desde la carpeta static/js/ -->
+
+</body>
+</html>

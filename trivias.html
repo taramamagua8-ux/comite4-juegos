@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+ARCHIVO: trivias.html
+DESCRIPCION: Estructura principal del juego de trivias sobre programacion, 
+todas las preguntas se muestran a la vez en la pagina, cada una con sus opciones.
+Al hacer clic en una opcion, se bloquea la pregunta y se muestra feedback visual 
+(correcto/incorrecto).El puntaje y progreso se actualizan en tiempo real.
+================================================================================
+-->
+<html lang="es">
+<head>
+    <!-- METADATOS BASICOS -->
+    <meta charset="UTF-8">  <!-- Codificacion UTF-8 para caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Viewport responsive -->
+    <title>Trivias de Programación</title>  <!-- Titulo de la pestaña -->
+
+    <!-- ================================================================
+        REFERENCIA A LA HOJA DE ESTILOS EXTERNA (url_for para Flask)
+        ================================================================ -->
+    <link rel="stylesheet" href="./static/styles/trivias.css">
+    <!-- Vincula el archivo trivias.css desde static/styles/ -->
+
+    <!-- Enlace a FontAwesome para iconos (opcional, se usa para el boton flotante) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- ENCABEZADO: titulo y descripcion -->
+    <header>
+        <h1>🧠 Trivias de Programación</h1>  <!-- Titulo principal con emoji -->
+        <p>Responde las 20 preguntas y mira tu puntaje final.</p>  <!-- Instrucciones -->
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL: contiene el quiz y los resultados -->
+    <main>
+
+        <!-- SECCION DEL QUIZ: contiene todas las preguntas -->
+        <section id="quiz">
+
+            <!-- PREGUNTA 1 -->
+            <div class="pregunta">
+                <h2>1. ¿Qué significa "HTML"?</h2>
+                <ul>
+                    <li><button class="opcion" data-correct="true">Hyper Text Markup Language</button></li>
+                    <li><button class="opcion">High Tech Modern Language</button></li>
+                    <li><button class="opcion">Hyper Transfer Markup Language</button></li>
+                    <li><button class="opcion">Home Tool Markup Language</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 2 -->
+            <div class="pregunta">
+                <h2>2. ¿Cuál es el lenguaje de programación más utilizado para desarrollo web front-end?</h2>
+                <ul>
+                    <li><button class="opcion">Python</button></li>
+                    <li><button class="opcion">Java</button></li>
+                    <li><button class="opcion" data-correct="true">JavaScript</button></li>
+                    <li><button class="opcion">C++</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 3 -->
+            <div class="pregunta">
+                <h2>3. ¿Qué es una variable en programación?</h2>
+                <ul>
+                    <li><button class="opcion">Un valor que no cambia</button></li>
+                    <li><button class="opcion" data-correct="true">Un espacio de memoria que almacena un valor</button></li>
+                    <li><button class="opcion">Una función</button></li>
+                    <li><button class="opcion">Un bucle</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 4 -->
+            <div class="pregunta">
+                <h2>4. ¿Cuál de estos es un lenguaje de programación orientado a objetos?</h2>
+                <ul>
+                    <li><button class="opcion">C</button></li>
+                    <li><button class="opcion" data-correct="true">Python</button></li>
+                    <li><button class="opcion">HTML</button></li>
+                    <li><button class="opcion">SQL</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 5 -->
+            <div class="pregunta">
+                <h2>5. ¿Qué hace el operador "===" en JavaScript?</h2>
+                <ul>
+                    <li><button class="opcion">Compara solo el valor</button></li>
+                    <li><button class="opcion" data-correct="true">Compara valor y tipo de dato</button></li>
+                    <li><button class="opcion">Asigna un valor</button></li>
+                    <li><button class="opcion">Compara si son diferentes</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 6 -->
+            <div class="pregunta">
+                <h2>6. ¿Qué es un algoritmo?</h2>
+                <ul>
+                    <li><button class="opcion">Un lenguaje de programación</button></li>
+                    <li><button class="opcion" data-correct="true">Un conjunto de pasos para resolver un problema</button></li>
+                    <li><button class="opcion">Un tipo de dato</button></li>
+                    <li><button class="opcion">Un error en el código</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 7 -->
+            <div class="pregunta">
+                <h2>7. ¿Cuál es el resultado de 5 + "5" en JavaScript?</h2>
+                <ul>
+                    <li><button class="opcion">10</button></li>
+                    <li><button class="opcion" data-correct="true">"55"</button></li>
+                    <li><button class="opcion">Error</button></li>
+                    <li><button class="opcion">55</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 8 -->
+            <div class="pregunta">
+                <h2>8. ¿Qué es un bucle "for"?</h2>
+                <ul>
+                    <li><button class="opcion" data-correct="true">Una estructura de control que repite un bloque de código</button></li>
+                    <li><button class="opcion">Una función</button></li>
+                    <li><button class="opcion">Un tipo de variable</button></li>
+                    <li><button class="opcion">Un operador lógico</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 9 -->
+            <div class="pregunta">
+                <h2>9. ¿Cuál es la extensión de un archivo de Python?</h2>
+                <ul>
+                    <li><button class="opcion" data-correct="true">.py</button></li>
+                    <li><button class="opcion">.java</button></li>
+                    <li><button class="opcion">.js</button></li>
+                    <li><button class="opcion">.html</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 10 -->
+            <div class="pregunta">
+                <h2>10. ¿Qué es CSS?</h2>
+                <ul>
+                    <li><button class="opcion">Un lenguaje de programación</button></li>
+                    <li><button class="opcion" data-correct="true">Un lenguaje de estilos para páginas web</button></li>
+                    <li><button class="opcion">Un servidor web</button></li>
+                    <li><button class="opcion">Un tipo de base de datos</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 11 -->
+            <div class="pregunta">
+                <h2>11. ¿Cuál es la función de "console.log()" en JavaScript?</h2>
+                <ul>
+                    <li><button class="opcion" data-correct="true">Mostrar un mensaje en la consola del navegador</button></li>
+                    <li><button class="opcion">Guardar datos en una base de datos</button></li>
+                    <li><button class="opcion">Crear una variable</button></li>
+                    <li><button class="opcion">Detener la ejecución del programa</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 12 -->
+            <div class="pregunta">
+                <h2>12. ¿Qué es un array?</h2>
+                <ul>
+                    <li><button class="opcion" data-correct="true">Una estructura de datos que almacena múltiples valores</button></li>
+                    <li><button class="opcion">Un tipo de variable única</button></li>
+                    <li><button class="opcion">Un bucle</button></li>
+                    <li><button class="opcion">Un condicional</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 13 -->
+            <div class="pregunta">
+                <h2>13. ¿Cuál de estos es un lenguaje de programación de bajo nivel?</h2>
+                <ul>
+                    <li><button class="opcion">Python</button></li>
+                    <li><button class="opcion">JavaScript</button></li>
+                    <li><button class="opcion" data-correct="true">Ensamblador</button></li>
+                    <li><button class="opcion">Ruby</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 14 -->
+            <div class="pregunta">
+                <h2>14. ¿Qué es un "commit" en Git?</h2>
+                <ul>
+                    <li><button class="opcion">Un error en el código</button></li>
+                    <li><button class="opcion" data-correct="true">Un registro de cambios en el repositorio</button></li>
+                    <li><button class="opcion">Una rama del proyecto</button></li>
+                    <li><button class="opcion">Un archivo de configuración</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 15 -->
+            <div class="pregunta">
+                <h2>15. ¿Qué significa "API"?</h2>
+                <ul>
+                    <li><button class="opcion" data-correct="true">Application Programming Interface</button></li>
+                    <li><button class="opcion">Advanced Programming Instruction</button></li>
+                    <li><button class="opcion">Automated Program Integration</button></li>
+                    <li><button class="opcion">Applied Protocol Interface</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 16 -->
+            <div class="pregunta">
+                <h2>16. ¿Cuál es la salida de 2 ** 3 en Python?</h2>
+                <ul>
+                    <li><button class="opcion">6</button></li>
+                    <li><button class="opcion" data-correct="true">8</button></li>
+                    <li><button class="opcion">9</button></li>
+                    <li><button class="opcion">5</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 17 -->
+            <div class="pregunta">
+                <h2>17. ¿Qué es un "framework" en programación?</h2>
+                <ul>
+                    <li><button class="opcion" data-correct="true">Un conjunto de herramientas y bibliotecas para desarrollar aplicaciones</button></li>
+                    <li><button class="opcion">Un lenguaje de programación</button></li>
+                    <li><button class="opcion">Un tipo de base de datos</button></li>
+                    <li><button class="opcion">Un editor de texto</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 18 -->
+            <div class="pregunta">
+                <h2>18. ¿Cuál es la diferencia entre "==" y "===" en JavaScript?</h2>
+                <ul>
+                    <li><button class="opcion" data-correct="true">"==" compara solo valor, "===" compara valor y tipo</button></li>
+                    <li><button class="opcion">"===" compara solo valor, "==" compara valor y tipo</button></li>
+                    <li><button class="opcion">Ambos son iguales</button></li>
+                    <li><button class="opcion">Ninguno es válido</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 19 -->
+            <div class="pregunta">
+                <h2>19. ¿Qué es un "bug" en programación?</h2>
+                <ul>
+                    <li><button class="opcion" data-correct="true">Un error en el código que causa un comportamiento inesperado</button></li>
+                    <li><button class="opcion">Una característica del lenguaje</button></li>
+                    <li><button class="opcion">Una herramienta de depuración</button></li>
+                    <li><button class="opcion">Un tipo de variable</button></li>
+                </ul>
+            </div>
+
+            <!-- PREGUNTA 20 -->
+            <div class="pregunta">
+                <h2>20. ¿Cuál es el propósito de la función "main" en C?</h2>
+                <ul>
+                    <li><button class="opcion" data-correct="true">Iniciar la ejecución del programa</button></li>
+                    <li><button class="opcion">Declarar variables</button></li>
+                    <li><button class="opcion">Importar bibliotecas</button></li>
+                    <li><button class="opcion">Finalizar el programa</button></li>
+                </ul>
+            </div>
+
+        </section>  <!-- Fin de la sección del quiz -->
+
+        <!-- SECCION DE RESULTADOS: muestra puntaje, progreso y mensaje final -->
+        <section id="resultado">
+            <h2>Tu puntaje</h2>
+            <p><strong>Correctas:</strong> <span id="puntaje">0</span> de <span id="total">20</span></p>
+            <p><strong>Progreso:</strong> <span id="respondidas">0</span>/20</p>
+            <p id="mensajeResultado"></p>
+            <button id="reiniciar">Reiniciar Quiz</button>
+        </section>
+
+    </main>
+
+    <!-- BOTON FLOTANTE PARA VOLVER AL MENU PRINCIPAL -->
+    <div class="quiz-eco-btn-container">
+        <!-- El boton redirige a la raiz '/' usando url_for de Flask -->
+        <button class="quiz-eco-btn" onclick="window.location.href='./index.html'">
+            <i class="fas fa-home"></i> Volver al menú
+        </button>
+    </div>
+
+    <!-- PIE DE PAGINA -->
+    <footer>
+        <p>⚡ Comité 4 · Trivias de Programación ⚡</p>
+    </footer>
+
+    <!-- ================================================================
+        REFERENCIA AL ARCHIVO DE JAVASCRIPT EXTERNO (url_for)
+        ================================================================ -->
+    <script src="./static/js/trivias.js"></script>
+
+</body>
+</html>

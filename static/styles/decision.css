@@ -1,0 +1,276 @@
+/*
+================================================================================
+Estilos para el juego de decision "El Codigo Perdido".
+Paleta de colores basada en azul indigo oscuro, con acentos en azul
+electrico para resaltar. Diseño minimalista, tipografia limpia y
+efectos de transicion suaves.
+================================================================================
+*/
+
+/* --- RESETEO DE ESTILOS --- */
+* {
+    margin: 0;
+    /* Elimina margen exterior */
+    padding: 0;
+    /* Elimina relleno interior */
+    box-sizing: border-box;
+    /* Incluye padding y borde en el ancho total */
+}
+
+/* --- CUERPO: fondo muy oscuro con gradiente sutíl --- */
+body {
+    background: #0a0a1a;
+    /* Fondo negro azulado profundo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fuente moderna y legible */
+    display: flex;
+    /* Centrado con flexbox */
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
+    min-height: 100vh;
+    /* Altura minima igual a la ventana */
+    padding: 20px;
+    /* Espaciado en pantallas pequenas */
+    background: linear-gradient(145deg, #0a0a1a 0%, #1a1a3a 100%);
+    /* Gradiente de fondo sutil */
+}
+
+/* --- CONTENEDOR PRINCIPAL: tarjeta con borde indigo --- */
+.container {
+    background: #12122a;
+    /* Fondo indigo oscuro */
+    border: 2px solid #2a3a7a;
+    /* Borde indigo medio */
+    border-radius: 20px;
+    /* Esquinas redondeadas */
+    padding: 30px 35px;
+    /* Relleno interior */
+    max-width: 650px;
+    /* Ancho maximo para legibilidad */
+    width: 100%;
+    /* Ocupa todo el ancho hasta el maximo */
+    box-shadow: 0 0 40px rgba(30, 60, 180, 0.3);
+    /* Sombra indigo brillante */
+    transition: all 0.3s;
+    /* Transicion suave */
+}
+
+/* --- TITULO PRINCIPAL --- */
+h1 {
+    color: #7a9eff;
+    /* Azul claro electrico */
+    text-align: center;
+    /* Centrado */
+    font-size: 2.2rem;
+    /* Tamano grande */
+    margin-bottom: 20px;
+    /* Separacion inferior */
+    border-bottom: 2px solid #2a3a7a;
+    /* Linea inferior indigo */
+    padding-bottom: 12px;
+    /* Espacio entre texto y linea */
+    text-shadow: 0 0 10px rgba(60, 120, 255, 0.3);
+    /* Sombra luminosa */
+}
+
+/* --- CONTENEDOR DE LA HISTORIA: area de narracion --- */
+#story-container {
+    background: #0e0e22;
+    /* Fondo ligeramente mas oscuro que el contenedor */
+    border-left: 4px solid #3a5a9a;
+    /* Borde lateral indigo */
+    border-radius: 10px;
+    /* Esquinas redondeadas */
+    padding: 20px 25px;
+    /* Relleno interior */
+    margin-bottom: 25px;
+    /* Separacion inferior */
+    min-height: 150px;
+    /* Altura minima para evitar saltos */
+    display: flex;
+    /* Flex para centrar el texto */
+    align-items: center;
+    /* Centrado vertical */
+    justify-content: center;
+    /* Centrado horizontal */
+}
+
+/* --- TEXTO DE LA HISTORIA --- */
+#story-text {
+    color: #c8d8ff;
+    /* Azul muy claro */
+    font-size: 1.2rem;
+    /* Tamano legible */
+    line-height: 1.6;
+    /* Interlineado */
+    text-align: center;
+    /* Centrado */
+    margin: 0;
+    /* Sin margen */
+    transition: opacity 0.5s;
+    /* Transicion suave al cambiar */
+}
+
+/* --- CONTENEDOR DE OPCIONES: botones de decision --- */
+#options-container {
+    display: flex;
+    /* Flex para alinear botones */
+    flex-direction: column;
+    /* Columna vertical */
+    gap: 12px;
+    /* Espacio entre botones */
+    margin-bottom: 25px;
+    /* Separacion inferior */
+}
+
+/* --- BOTON DE OPCION (se genera dinamicamente) --- */
+.option-btn {
+    background: #16163a;
+    /* Fondo indigo oscuro */
+    border: 2px solid #3a5a9a;
+    /* Borde indigo medio */
+    color: #b0caff;
+    /* Texto azul claro */
+    padding: 14px 20px;
+    /* Relleno interior */
+    border-radius: 12px;
+    /* Esquinas redondeadas */
+    font-size: 1.05rem;
+    /* Tamano mediano */
+    font-weight: 600;
+    /* Semi-negrita */
+    cursor: pointer;
+    /* Mano al pasar */
+    transition: all 0.3s ease;
+    /* Transicion suave */
+    text-align: left;
+    /* Texto alineado a la izquierda para mejor lectura */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    /* Sombra sutil */
+}
+
+/* --- HOVER DE BOTON DE OPCION --- */
+.option-btn:hover {
+    background: #2a3a7a;
+    /* Fondo indigo mas brillante */
+    border-color: #6a8aff;
+    /* Borde azul electrico */
+    transform: scale(1.02);
+    /* Ligera ampliacion */
+    box-shadow: 0 0 20px rgba(60, 120, 255, 0.3);
+    /* Sombra luminosa */
+}
+
+/* --- BOTON DE OPCION DESACTIVADO (cuando el juego termina) --- */
+.option-btn.disabled {
+    opacity: 0.5;
+    /* Transparencia */
+    pointer-events: none;
+    /* No permite clic */
+    cursor: default;
+    /* Cursor normal */
+}
+
+/* --- CONTADOR DE DECISIONES --- */
+#counter {
+    color: #7a9eff;
+    /* Azul electrico */
+    font-size: 1rem;
+    /* Tamano normal */
+    text-align: center;
+    /* Centrado */
+    margin-bottom: 15px;
+    /* Separacion inferior */
+    background: #0e0e22;
+    /* Fondo oscuro */
+    padding: 8px 15px;
+    /* Relleno interior */
+    border-radius: 30px;
+    /* Borde redondeado */
+    display: inline-block;
+    /* Ajusta al contenido */
+    width: auto;
+    /* Ancho automatico */
+    margin-left: auto;
+    /* Centrado horizontal */
+    margin-right: auto;
+    /* Centrado horizontal */
+}
+
+/* --- NUMERO DEL CONTADOR (destacado) --- */
+#decision-count {
+    font-weight: bold;
+    /* Negrita */
+    color: #aaccff;
+    /* Azul muy claro */
+    font-size: 1.2rem;
+    /* Ligeramente mas grande */
+}
+
+/* --- BOTON DE REINICIO (estilo back pero con tonos indigo) --- */
+#reset-btn {
+    display: none;
+    /* Oculto por defecto */
+    background: #0e0e22;
+    /* Fondo oscuro */
+    border: 2px solid #3a5a9a;
+    /* Borde indigo */
+    color: #b0caff;
+    /* Texto azul claro */
+    padding: 14px 20px;
+    /* Relleno */
+    margin: 10px auto 0 auto;
+    /* Margen superior y centrado */
+    border-radius: 12px;
+    /* Esquinas redondeadas */
+    font-size: 1.1rem;
+    /* Tamano */
+    font-weight: bold;
+    /* Negrita */
+    cursor: pointer;
+    /* Mano */
+    transition: all 0.3s;
+    /* Transicion */
+    width: 100%;
+    /* Ocupa todo el ancho */
+    text-align: center;
+    /* Centrado */
+}
+
+/* --- HOVER DE REINICIO --- */
+#reset-btn:hover {
+    background: #2a3a7a;
+    /* Fondo indigo */
+    border-color: #6a8aff;
+    /* Borde azul electrico */
+    box-shadow: 0 0 20px rgba(60, 120, 255, 0.3);
+    /* Sombra luminosa */
+}
+
+/* --- PIE DE PAGINA --- */
+.footer {
+    color: #3a4a7a;
+    /* Indigo tenue */
+    text-align: center;
+    /* Centrado */
+    margin-top: 20px;
+    /* Separacion superior */
+    font-size: 0.8rem;
+    /* Tamano pequeno */
+    letter-spacing: 1px;
+    /* Espaciado entre letras */
+}
+
+/* --- EFECTO DE PARPADEO PARA TEXTO DE FINAL (opcional) --- */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+/* La clase 'pulse' se puede añadir desde JS para dar enfasis al final */
+.pulse {
+    animation: pulse 1.5s infinite;
+    /* Animacion infinita */
+}

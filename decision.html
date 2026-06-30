@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+Estructura principal del juego de decision "El Codigo Perdido".
+Es una novela visual sin imagenes donde el jugador toma decisiones que
+afectan el desarrollo de la historia. Contiene contenedores para la
+narracion, las opciones y el contador de decisiones.
+Los estilos y logica estan en archivos externos (decision.css y decision.js)
+================================================================================
+-->
+<html lang="es">
+<head>
+    <!-- METADATOS BASICOS -->
+    <meta charset="UTF-8">
+    <!-- Codificacion UTF-8 para caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport responsive -->
+    <title>El Código Perdido · Juego de Decisión</title>
+    <!-- Titulo de la pestaña -->
+
+    <!-- ================================================================
+        REFERENCIA A LA HOJA DE ESTILOS EXTERNA
+        ================================================================ -->
+    <link rel="stylesheet" href="./static/styles/decision.css">
+    <!-- Vincula el archivo decision.css desde static/styles/ -->
+
+</head>
+<body>
+
+    <!-- ================================================================
+        CONTENEDOR PRINCIPAL: tarjeta con borde y sombra en tonos indigo
+        ================================================================ -->
+    <div class="container">
+
+        <!-- TITULO DEL JUEGO (visible siempre) -->
+        <h1>🧩 El Código Perdido</h1>
+        <!-- Encabezado principal con emoji de puzzle -->
+
+        <!-- ================================================================
+            CONTENEDOR DE LA HISTORIA: muestra la narracion actual
+            ================================================================ -->
+        <div id="story-container">
+            <!-- Este div contiene el texto de la escena actual -->
+            <p id="story-text">
+                <!-- El texto se actualiza dinamicamente con JavaScript -->
+                Cargando historia...
+            </p>
+            <!-- Parrafo donde se muestra la narracion -->
+        </div>
+
+        <!-- ================================================================
+            CONTENEDOR DE OPCIONES: muestra los botones de decision
+            ================================================================ -->
+        <div id="options-container">
+            <!-- Aqui se generan los botones de opciones mediante JavaScript -->
+            <!-- Inicialmente vacio; se llena al cargar la primera escena -->
+        </div>
+
+        <!-- ================================================================
+            CONTADOR DE DECISIONES: muestra cuantas decisiones ha tomado el jugador
+            ================================================================ -->
+        <div id="counter">
+            <span>Decisiones tomadas: </span>
+            <!-- Texto fijo -->
+            <span id="decision-count">0</span>
+            <!-- Numero que se actualiza con cada eleccion -->
+        </div>
+
+        <!-- ================================================================
+            BOTON DE REINICIO: aparece al final de la partida
+            ================================================================ -->
+        <button id="reset-btn" class="btn back" style="display: none;">
+            <!-- Oculto por defecto; se muestra cuando el juego termina -->
+            🔄 Reiniciar aventura
+        </button>
+
+        <!-- ================================================================
+            PIE DE PAGINA
+            ================================================================ -->
+        <div class="footer">⚡ Comité 4 · Novela Visual ⚡</div>
+
+    </div>
+    <!-- Fin del contenedor principal -->
+
+    <!-- ================================================================
+        REFERENCIA AL ARCHIVO DE JAVASCRIPT EXTERNO
+        ================================================================ -->
+    <script src="./static/js/decision.js"></script>
+    <!-- Vincula el archivo decision.js que contiene toda la logica del juego -->
+
+</body>
+</html>
