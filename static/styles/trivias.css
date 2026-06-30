@@ -1,237 +1,237 @@
 /* --- RESETEO DE ESTILOS: elimina margenes y padding por defecto --- */
 * {
-    margin: 0;           /* Elimina el margen exterior de todos los elementos */
-    padding: 0;          /* Elimina el relleno interior de todos los elementos */
-    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* --- CUERPO: fondo oscuro y tipografia moderna --- */
+/* --- CUERPO: fondo oscuro y tipografia moderna con gradiente verde --- */
 body {
-    background: #0a0a0a; /* Fondo negro profundo */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente legible */
-    color: #f0e6f6;      /* Texto morado muy claro por defecto */
-    min-height: 100vh;   /* Altura minima igual al viewport */
-    padding: 20px;       /* Espaciado general */
-    background: linear-gradient(145deg, #0a0a0a 0%, #1a0a2a 100%); /* Gradiente negro a morado oscuro */
+    background: #0a0a0a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #d0f0d0;      /* Verde muy claro */
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(145deg, #0a0a0a 0%, #0a2a0a 100%); /* Gradiente negro a verde oscuro */
 }
 
-/* --- ENCABEZADO: fondo morado oscuro semi-transparente --- */
+/* --- ENCABEZADO: fondo verde oscuro semi-transparente --- */
 header {
-    background: rgba(30, 10, 50, 0.85); /* Morado oscuro con transparencia */
-    padding: 20px;                     /* Relleno interno */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Sombra inferior */
-    text-align: center;                /* Texto centrado */
+    background: rgba(10, 30, 10, 0.85);
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    text-align: center;
 }
 
 header h1 {
-    margin: 0;           /* Elimina margen por defecto */
-    font-size: 2em;      /* Tamano grande */
-    color: #c89ad8;      /* Morado claro */
+    margin: 0;
+    font-size: 2em;
+    color: #8ad08a;      /* Verde claro */
 }
 
 header p {
-    color: #d8b0e8;      /* Morado mas claro */
-    margin-top: 5px;     /* Separacion superior */
+    color: #a8e0a8;      /* Verde más claro */
+    margin-top: 5px;
 }
 
 /* --- CONTENIDO PRINCIPAL: centrado en columna --- */
 main {
-    display: flex;           /* Flexbox para organizar */
-    flex-direction: column;  /* Columna vertical */
-    align-items: center;     /* Centrado horizontal */
-    padding: 20px;           /* Relleno */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
-/* --- TARJETA DE PREGUNTA: similar al quiz de reciclaje pero con colores morados --- */
+/* --- TARJETA DE PREGUNTA: con colores verdes --- */
 .pregunta {
-    width: 90%;                     /* Ancho relativo */
-    max-width: 700px;               /* Ancho maximo */
-    margin: 20px auto;              /* Centrado y separacion vertical */
-    background: linear-gradient(135deg, rgba(60, 20, 80, 0.9), rgba(30, 10, 50, 0.9)); /* Gradiente morado */
-    padding: 20px;                  /* Relleno interno */
-    border-radius: 12px;            /* Esquinas redondeadas */
-    box-shadow: 0 4px 15px rgba(60, 20, 80, 0.5); /* Sombra morada */
-    border-left: 4px solid #7a3a9a; /* Borde lateral morado */
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, rgba(20, 80, 20, 0.9), rgba(10, 50, 10, 0.9)); /* Gradiente verde */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(20, 80, 20, 0.5); /* Sombra verde */
+    border-left: 4px solid #2a7a2a; /* Borde lateral verde */
 }
 
 .pregunta h2 {
-    margin-bottom: 15px;   /* Separacion inferior */
-    font-size: 1.2em;      /* Tamano */
-    color: #e0c8f0;        /* Morado muy claro */
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #c0f0c0;        /* Verde muy claro */
 }
 
 /* --- LISTA DE OPCIONES: sin viñetas --- */
 ul {
-    list-style: none;  /* Elimina los puntos */
-    padding: 0;        /* Sin relleno */
+    list-style: none;
+    padding: 0;
 }
 
-/* --- BOTON DE OPCION: estilo morado --- */
+/* --- BOTON DE OPCION: estilo verde --- */
 .opcion {
-    display: block;       /* Ocupa todo el ancho */
-    width: 100%;          /* Ancho completo */
-    margin: 10px 0;       /* Separacion vertical */
-    padding: 12px;        /* Relleno interno */
-    background-color: rgba(80, 40, 100, 0.25); /* Morado semi-transparente */
-    border: 2px solid #5a2a7a; /* Borde morado medio */
-    border-radius: 8px;   /* Esquinas redondeadas */
-    cursor: pointer;      /* Mano al pasar */
-    color: #d8b0e8;       /* Texto morado claro */
-    font-size: 1em;       /* Tamano normal */
-    transition: background 0.3s, transform 0.2s; /* Transiciones suaves */
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    background-color: rgba(40, 100, 40, 0.25); /* Verde semi-transparente */
+    border: 2px solid #2a5a2a; /* Borde verde medio */
+    border-radius: 8px;
+    cursor: pointer;
+    color: #b0e0b0;       /* Texto verde claro */
+    font-size: 1em;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .opcion:hover {
-    background-color: rgba(100, 50, 130, 0.5); /* Mas opaco al pasar el mouse */
-    transform: scale(1.02); /* Ligeramente mas grande */
+    background-color: rgba(50, 130, 50, 0.5);
+    transform: scale(1.02);
 }
 
 /* --- OPCION DESHABILITADA (despues de responder) --- */
 .opcion:disabled {
-    opacity: 0.7;                 /* Mas transparente */
-    cursor: not-allowed;          /* Cursor de no permitido */
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 /* --- OPCION CORRECTA (marcada con JS) --- */
 .opcion.correcta {
-    background-color: #3a8a3d; /* Fondo morado medio */
-    border-color: #9b59b6;     /* Borde morado claro */
-    color: #fff;               /* Texto blanco */
+    background-color: #3a8a3d; /* Verde medio */
+    border-color: #5cb85c;
+    color: #fff;
 }
 
 /* --- OPCION INCORRECTA (marcada con JS) --- */
 .opcion.incorrecta {
-    background-color: #8a2a3a; /* Fondo rojo oscuro (para destacar error) */
-    border-color: #c0392b;     /* Borde rojo */
-    color: #fff;               /* Texto blanco */
+    background-color: #8a2a3a; /* Rojo oscuro (se mantiene para destacar error) */
+    border-color: #c0392b;
+    color: #fff;
 }
 
-/* --- SECCION DE RESULTADOS: fondo oscuro con borde morado --- */
+/* --- SECCION DE RESULTADOS: fondo oscuro con borde verde --- */
 #resultado {
-    text-align: center;                /* Centrado */
-    margin-top: 30px;                  /* Separacion superior */
-    background: rgba(20, 10, 30, 0.85); /* Fondo negro-morado */
-    padding: 20px;                     /* Relleno */
-    border-radius: 10px;               /* Esquinas redondeadas */
-    width: 90%;                        /* Ancho relativo */
-    max-width: 600px;                  /* Ancho maximo */
-    color: #f0e6f6;                    /* Texto claro */
-    border: 2px solid #5a2a7a;         /* Borde morado */
+    text-align: center;
+    margin-top: 30px;
+    background: rgba(10, 30, 10, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    color: #d0f0d0;
+    border: 2px solid #2a7a2a; /* Borde verde */
 }
 
 #puntaje {
-    font-size: 2em;        /* Tamano grande */
-    color: #b07ad0;        /* Morado brillante */
+    font-size: 2em;
+    color: #7ad07a;        /* Verde brillante */
 }
 
 #respondidas, #total {
-    font-weight: bold;     /* Negrita */
+    font-weight: bold;
 }
 
 #mensajeResultado {
-    margin: 10px 0 0;      /* Margen superior, sin laterales ni inferior */
-    font-size: 1.1em;      /* Ligeramente mayor */
-    color: #d8b0e8;        /* Morado claro */
+    margin: 10px 0 0;
+    font-size: 1.1em;
+    color: #b0e0b0;
 }
 
-/* --- BOTON DE REINICIO: estilo morado --- */
+/* --- BOTON DE REINICIO: estilo verde --- */
 #reiniciar {
-    margin-top: 15px;          /* Separacion superior */
-    padding: 12px 24px;        /* Relleno */
-    background-color: #3a1a52; /* Morado oscuro */
-    color: white;              /* Texto blanco */
-    border: 2px solid #6a2a8a; /* Borde morado */
-    border-radius: 6px;        /* Esquinas redondeadas */
-    cursor: pointer;           /* Mano al pasar */
-    font-size: 1em;            /* Tamano normal */
-    transition: background 0.3s; /* Transicion suave */
+    margin-top: 15px;
+    padding: 12px 24px;
+    background-color: #1a3a1a; /* Verde oscuro */
+    color: white;
+    border: 2px solid #2a5a2a;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
 }
 
 #reiniciar:hover {
-    background-color: #5a2a7a; /* Morado mas claro al pasar el mouse */
+    background-color: #2a5a2a; /* Verde más claro */
 }
 
 /* --- PIE DE PAGINA: estilo similar al encabezado --- */
 footer {
-    background: rgba(30, 10, 50, 0.85); /* Mismo fondo que header */
-    padding: 10px;                      /* Relleno */
-    margin-top: 30px;                   /* Separacion superior */
-    color: #b07ad0;                     /* Morado claro */
-    text-align: center;                 /* Centrado */
-    font-size: 0.9em;                  /* Ligeramente menor */
+    background: rgba(10, 30, 10, 0.85);
+    padding: 10px;
+    margin-top: 30px;
+    color: #7ad07a;
+    text-align: center;
+    font-size: 0.9em;
 }
 
 /* ================================================================
-    BOTON FLOTANTE PARA VOLVER AL MENU (estilo morado)
+    BOTON FLOTANTE PARA VOLVER AL MENU (estilo verde)
     ================================================================ */
 .quiz-eco-btn-container {
-    position: fixed;    /* Posicion fija respecto a la ventana */
-    bottom: 30px;       /* 30px desde el borde inferior */
-    right: 30px;        /* 30px desde el borde derecho */
-    z-index: 1000;      /* Por encima de otros elementos */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
 }
 
 .quiz-eco-btn {
-    display: flex;               /* Flexbox para alinear icono y texto */
-    align-items: center;         /* Centrado vertical */
-    justify-content: center;     /* Centrado horizontal */
-    gap: 12px;                   /* Espacio entre icono y texto */
-    padding: 14px 28px;          /* Relleno interno */
-    background: linear-gradient(145deg, #2a0a3a 0%, #4a1a6a 50%, #6a2a8a 100%); /* Gradiente morado */
-    color: white;                /* Texto blanco */
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Borde blanco semi-transparente */
-    border-radius: 35px;         /* Bordes redondeados */
-    cursor: pointer;             /* Mano al pasar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: linear-gradient(145deg, #0a2a0a 0%, #1a5a1a 50%, #2a8a2a 100%); /* Gradiente verde */
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 35px;
+    cursor: pointer;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.1rem;           /* Tamano */
-    font-weight: 700;            /* Negrita */
-    text-decoration: none;       /* Sin subrayado */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transicion elastica */
-    box-shadow: 0 6px 20px rgba(80, 20, 120, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); /* Desenfoque del fondo */
-    position: relative;          /* Para pseudo-elementos */
-    overflow: hidden;            /* Oculta desbordes */
-    letter-spacing: 0.5px;       /* Espaciado entre letras */
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 6px 20px rgba(20, 80, 20, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .quiz-eco-btn::before {
-    content: '';                 /* Necesario para mostrar */
-    position: absolute;          /* Absoluto dentro del boton */
+    content: '';
+    position: absolute;
     top: 0;
-    left: -100%;                 /* Inicia fuera a la izquierda */
+    left: -100%;
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: 0.6s;            /* Transicion suave */
+    transition: 0.6s;
 }
 
 .quiz-eco-btn:hover {
-    background: linear-gradient(145deg, #1a0a2a 0%, #3a1a5a 50%, #5a2a7a 100%); /* Gradiente mas oscuro */
-    transform: translateY(-5px) scale(1.05); /* Elevacion y escala */
-    box-shadow: 0 12px 25px rgba(60, 20, 100, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: linear-gradient(145deg, #0a1a0a 0%, #1a4a1a 50%, #2a6a2a 100%);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(20, 80, 20, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     letter-spacing: 0.8px;
 }
 
 .quiz-eco-btn:hover::before {
-    left: 100%;                  /* Desplaza el brillo de izquierda a derecha */
+    left: 100%;
 }
 
 .quiz-eco-btn:active {
-    transform: translateY(-2px) scale(1.02); /* Efecto de clic */
+    transform: translateY(-2px) scale(1.02);
     transition: 0.1s;
 }
 
 .quiz-eco-btn i {
-    font-size: 1.4rem;           /* Tamano del icono */
+    font-size: 1.4rem;
     transition: all 0.4s ease;
     filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
-    color: #d8b0e8;              /* Morado claro para el icono */
+    color: #8ad08a;        /* Verde claro para el icono */
 }
 
 .quiz-eco-btn:hover i {
-    transform: rotate(360deg) scale(1.2); /* Rota y escala el icono */
-    color: #f0e6f6;              /* Morado mas claro */
+    transform: rotate(360deg) scale(1.2);
+    color: #d0f0d0;
 }
 
 .quiz-eco-btn::after {
@@ -241,7 +241,7 @@ footer {
     left: -10px;
     right: -10px;
     bottom: -10px;
-    background: linear-gradient(45deg, #2a0a3a, #4a1a6a, #6a2a8a, #4a1a6a);
+    background: linear-gradient(45deg, #0a2a0a, #1a5a1a, #2a8a2a, #1a5a1a);
     border-radius: 40px;
     z-index: -1;
     opacity: 0;
@@ -257,4 +257,65 @@ footer {
     0% { opacity: 0.5; }
     50% { opacity: 0.8; }
     100% { opacity: 0.5; }
+}
+
+/* ================================================================
+   RESPONSIVE: PANTALLAS PEQUEÑAS (hasta 600px)
+   ================================================================ */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        background: linear-gradient(145deg, #0a0a0a 0%, #0a2a0a 100%);
+    }
+    header h1 {
+        font-size: 1.6em;
+    }
+    header p {
+        font-size: 0.9em;
+    }
+    .pregunta {
+        width: 95%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+    .pregunta h2 {
+        font-size: 1em;
+    }
+    .opcion {
+        padding: 10px;
+        font-size: 0.9em;
+        margin: 8px 0;
+    }
+    #resultado {
+        width: 95%;
+        padding: 15px;
+    }
+    #puntaje {
+        font-size: 1.6em;
+    }
+    #mensajeResultado {
+        font-size: 1em;
+    }
+    #reiniciar {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    footer {
+        font-size: 0.8em;
+        padding: 8px;
+        margin-top: 20px;
+    }
+    .quiz-eco-btn-container {
+        bottom: 15px;
+        right: 15px;
+    }
+    .quiz-eco-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+        gap: 8px;
+        border-radius: 30px;
+    }
+    .quiz-eco-btn i {
+        font-size: 1.2rem;
+    }
 }
