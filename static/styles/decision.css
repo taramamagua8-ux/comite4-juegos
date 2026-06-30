@@ -1,276 +1,262 @@
-/*
-================================================================================
-Estilos para el juego de decision "El Codigo Perdido".
-Paleta de colores basada en azul indigo oscuro, con acentos en azul
-electrico para resaltar. Diseño minimalista, tipografia limpia y
-efectos de transicion suaves.
-================================================================================
-*/
+
 
 /* --- RESETEO DE ESTILOS --- */
 * {
     margin: 0;
-    /* Elimina margen exterior */
     padding: 0;
-    /* Elimina relleno interior */
     box-sizing: border-box;
-    /* Incluye padding y borde en el ancho total */
 }
 
-/* --- CUERPO: fondo muy oscuro con gradiente sutíl --- */
+/* --- CUERPO: fondo oscuro con gradiente café --- */
 body {
-    background: #0a0a1a;
-    /* Fondo negro azulado profundo */
+    background: #1a0e08;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Fuente moderna y legible */
     display: flex;
-    /* Centrado con flexbox */
     justify-content: center;
-    /* Centrado horizontal */
     align-items: center;
-    /* Centrado vertical */
     min-height: 100vh;
-    /* Altura minima igual a la ventana */
     padding: 20px;
-    /* Espaciado en pantallas pequenas */
-    background: linear-gradient(145deg, #0a0a1a 0%, #1a1a3a 100%);
-    /* Gradiente de fondo sutil */
+    background: linear-gradient(145deg, #1a0e08 0%, #3d2317 100%);
 }
 
-/* --- CONTENEDOR PRINCIPAL: tarjeta con borde indigo --- */
+/* --- CONTENEDOR PRINCIPAL: tarjeta con borde café --- */
 .container {
-    background: #12122a;
-    /* Fondo indigo oscuro */
-    border: 2px solid #2a3a7a;
-    /* Borde indigo medio */
+    background: #2c1a12;
+    border: 2px solid #6b3f2b;
     border-radius: 20px;
-    /* Esquinas redondeadas */
     padding: 30px 35px;
-    /* Relleno interior */
     max-width: 650px;
-    /* Ancho maximo para legibilidad */
     width: 100%;
-    /* Ocupa todo el ancho hasta el maximo */
-    box-shadow: 0 0 40px rgba(30, 60, 180, 0.3);
-    /* Sombra indigo brillante */
+    box-shadow: 0 0 40px rgba(100, 60, 30, 0.4);
     transition: all 0.3s;
-    /* Transicion suave */
 }
 
 /* --- TITULO PRINCIPAL --- */
 h1 {
-    color: #7a9eff;
-    /* Azul claro electrico */
+    color: #e6c9a8;
     text-align: center;
-    /* Centrado */
     font-size: 2.2rem;
-    /* Tamano grande */
     margin-bottom: 20px;
-    /* Separacion inferior */
-    border-bottom: 2px solid #2a3a7a;
-    /* Linea inferior indigo */
+    border-bottom: 2px solid #6b3f2b;
     padding-bottom: 12px;
-    /* Espacio entre texto y linea */
-    text-shadow: 0 0 10px rgba(60, 120, 255, 0.3);
-    /* Sombra luminosa */
+    text-shadow: 0 0 10px rgba(180, 120, 70, 0.3);
 }
 
-/* --- CONTENEDOR DE LA HISTORIA: area de narracion --- */
+/* --- CONTENEDOR DE LA HISTORIA --- */
 #story-container {
-    background: #0e0e22;
-    /* Fondo ligeramente mas oscuro que el contenedor */
-    border-left: 4px solid #3a5a9a;
-    /* Borde lateral indigo */
+    background: #22130d;
+    border-left: 4px solid #8b5a3c;
     border-radius: 10px;
-    /* Esquinas redondeadas */
     padding: 20px 25px;
-    /* Relleno interior */
     margin-bottom: 25px;
-    /* Separacion inferior */
     min-height: 150px;
-    /* Altura minima para evitar saltos */
     display: flex;
-    /* Flex para centrar el texto */
     align-items: center;
-    /* Centrado vertical */
     justify-content: center;
-    /* Centrado horizontal */
 }
 
 /* --- TEXTO DE LA HISTORIA --- */
 #story-text {
-    color: #c8d8ff;
-    /* Azul muy claro */
+    color: #f0dec6;
     font-size: 1.2rem;
-    /* Tamano legible */
     line-height: 1.6;
-    /* Interlineado */
     text-align: center;
-    /* Centrado */
     margin: 0;
-    /* Sin margen */
     transition: opacity 0.5s;
-    /* Transicion suave al cambiar */
 }
 
-/* --- CONTENEDOR DE OPCIONES: botones de decision --- */
+/* --- CONTENEDOR DE OPCIONES --- */
 #options-container {
     display: flex;
-    /* Flex para alinear botones */
     flex-direction: column;
-    /* Columna vertical */
     gap: 12px;
-    /* Espacio entre botones */
     margin-bottom: 25px;
-    /* Separacion inferior */
 }
 
-/* --- BOTON DE OPCION (se genera dinamicamente) --- */
+/* --- BOTON DE OPCION (estilo café) --- */
 .option-btn {
-    background: #16163a;
-    /* Fondo indigo oscuro */
-    border: 2px solid #3a5a9a;
-    /* Borde indigo medio */
-    color: #b0caff;
-    /* Texto azul claro */
+    background: #3d2317;
+    border: 2px solid #6b3f2b;
+    color: #e6c9a8;
     padding: 14px 20px;
-    /* Relleno interior */
     border-radius: 12px;
-    /* Esquinas redondeadas */
     font-size: 1.05rem;
-    /* Tamano mediano */
     font-weight: 600;
-    /* Semi-negrita */
     cursor: pointer;
-    /* Mano al pasar */
     transition: all 0.3s ease;
-    /* Transicion suave */
     text-align: left;
-    /* Texto alineado a la izquierda para mejor lectura */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    /* Sombra sutil */
 }
 
 /* --- HOVER DE BOTON DE OPCION --- */
 .option-btn:hover {
-    background: #2a3a7a;
-    /* Fondo indigo mas brillante */
-    border-color: #6a8aff;
-    /* Borde azul electrico */
+    background: #5a3422;
+    border-color: #b8825a;
     transform: scale(1.02);
-    /* Ligera ampliacion */
-    box-shadow: 0 0 20px rgba(60, 120, 255, 0.3);
-    /* Sombra luminosa */
+    box-shadow: 0 0 20px rgba(160, 100, 50, 0.3);
 }
 
-/* --- BOTON DE OPCION DESACTIVADO (cuando el juego termina) --- */
+/* --- BOTON DE OPCION DESACTIVADO --- */
 .option-btn.disabled {
     opacity: 0.5;
-    /* Transparencia */
     pointer-events: none;
-    /* No permite clic */
     cursor: default;
-    /* Cursor normal */
 }
 
 /* --- CONTADOR DE DECISIONES --- */
 #counter {
-    color: #7a9eff;
-    /* Azul electrico */
+    color: #d4b48c;
     font-size: 1rem;
-    /* Tamano normal */
     text-align: center;
-    /* Centrado */
     margin-bottom: 15px;
-    /* Separacion inferior */
-    background: #0e0e22;
-    /* Fondo oscuro */
+    background: #22130d;
     padding: 8px 15px;
-    /* Relleno interior */
     border-radius: 30px;
-    /* Borde redondeado */
     display: inline-block;
-    /* Ajusta al contenido */
     width: auto;
-    /* Ancho automatico */
     margin-left: auto;
-    /* Centrado horizontal */
     margin-right: auto;
-    /* Centrado horizontal */
 }
 
-/* --- NUMERO DEL CONTADOR (destacado) --- */
+/* --- NUMERO DEL CONTADOR --- */
 #decision-count {
     font-weight: bold;
-    /* Negrita */
-    color: #aaccff;
-    /* Azul muy claro */
+    color: #f0dec6;
     font-size: 1.2rem;
-    /* Ligeramente mas grande */
 }
 
-/* --- BOTON DE REINICIO (estilo back pero con tonos indigo) --- */
+/* --- BOTON DE REINICIO --- */
 #reset-btn {
     display: none;
-    /* Oculto por defecto */
-    background: #0e0e22;
-    /* Fondo oscuro */
-    border: 2px solid #3a5a9a;
-    /* Borde indigo */
-    color: #b0caff;
-    /* Texto azul claro */
+    background: #22130d;
+    border: 2px solid #6b3f2b;
+    color: #e6c9a8;
     padding: 14px 20px;
-    /* Relleno */
     margin: 10px auto 0 auto;
-    /* Margen superior y centrado */
     border-radius: 12px;
-    /* Esquinas redondeadas */
     font-size: 1.1rem;
-    /* Tamano */
     font-weight: bold;
-    /* Negrita */
     cursor: pointer;
-    /* Mano */
     transition: all 0.3s;
-    /* Transicion */
     width: 100%;
-    /* Ocupa todo el ancho */
     text-align: center;
-    /* Centrado */
 }
 
 /* --- HOVER DE REINICIO --- */
 #reset-btn:hover {
-    background: #2a3a7a;
-    /* Fondo indigo */
-    border-color: #6a8aff;
-    /* Borde azul electrico */
-    box-shadow: 0 0 20px rgba(60, 120, 255, 0.3);
-    /* Sombra luminosa */
+    background: #3d2317;
+    border-color: #b8825a;
+    box-shadow: 0 0 20px rgba(160, 100, 50, 0.3);
 }
 
 /* --- PIE DE PAGINA --- */
 .footer {
-    color: #3a4a7a;
-    /* Indigo tenue */
+    color: #6b4a33;
     text-align: center;
-    /* Centrado */
     margin-top: 20px;
-    /* Separacion superior */
     font-size: 0.8rem;
-    /* Tamano pequeno */
     letter-spacing: 1px;
-    /* Espaciado entre letras */
 }
 
-/* --- EFECTO DE PARPADEO PARA TEXTO DE FINAL (opcional) --- */
+/* --- EFECTO DE PARPADEO PARA TEXTO DE FINAL --- */
 @keyframes pulse {
     0% { opacity: 1; }
     50% { opacity: 0.6; }
     100% { opacity: 1; }
 }
-/* La clase 'pulse' se puede añadir desde JS para dar enfasis al final */
+
 .pulse {
     animation: pulse 1.5s infinite;
-    /* Animacion infinita */
+}
+
+/* ================================================================
+    BOTON FLOTANTE PARA VOLVER AL MENU (estilo café)
+    ================================================================ */
+.quiz-eco-btn-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.quiz-eco-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: linear-gradient(145deg, #1a0e08 0%, #3d2317 50%, #5a3422 100%);
+    color: #f0dec6;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 35px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 6px 20px rgba(60, 30, 10, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-eco-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: 0.6s;
+}
+
+.quiz-eco-btn:hover {
+    background: linear-gradient(145deg, #2c1a12 0%, #4a2a1a 50%, #6b3f2b 100%);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(80, 40, 15, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.8px;
+}
+
+.quiz-eco-btn:hover::before {
+    left: 100%;
+}
+
+.quiz-eco-btn:active {
+    transform: translateY(-2px) scale(1.02);
+    transition: 0.1s;
+}
+
+.quiz-eco-btn i {
+    font-size: 1.4rem;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+    color: #d4b48c;
+}
+
+.quiz-eco-btn:hover i {
+    transform: rotate(360deg) scale(1.2);
+    color: #f0dec6;
+}
+
+.quiz-eco-btn::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #1a0e08, #3d2317, #5a3422, #3d2317);
+    border-radius: 40px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.quiz-eco-btn:hover::after {
+    opacity: 0.5;
+    animation: pulse 1.5s infinite;
 }
