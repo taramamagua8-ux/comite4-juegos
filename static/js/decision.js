@@ -1,98 +1,272 @@
 /*
 ================================================================================
-Logica completa del juego de decision "El Codigo Perdido".
-Define la estructura de escenas (id, texto, opciones), maneja la navegacion
-entre escenas, el contador de decisiones, la deteccion de finales y el
-reinicio del juego. Ahora incluye una bandera de procesamiento para evitar
-clics multiples y el texto final muestra el numero exacto de decisiones.
+Logica completa del juego de decision "El Café Perfecto".
+Define una historia ramificada sobre la preparación del café, con múltiples
+finales. Incluye manejo de escenas, contador de decisiones, bloqueo de clics
+múltiples y reinicio.
 ================================================================================
 */
 
-/*
-BLOQUE PRINCIPAL: Se ejecuta cuando el DOM esta completamente cargado.
-Inicializa el juego, configura eventos y carga la primera escena.
-*/
 document.addEventListener('DOMContentLoaded', function() {
-    // Se usa DOMContentLoaded para asegurar que el HTML ya este cargado
 
     /*
     ================================================================
-    DEFINICION DE LA BASE DE DATOS DE ESCENAS
-    Cada escena tiene:
-    - id: identificador unico (string)
-    - text: texto que se muestra al jugador (string)
-    - options: array de objetos con:
-        - text: texto del boton
-        - nextScene: id de la siguiente escena (si es null, es un final)
-        - esFinal: booleano que indica si es un final
+    BASE DE DATOS DE ESCENAS - Historia del Café
     ================================================================
     */
     var scenes = {
-        // Escena inicial: el descubrimiento
+
+        // ========== INICIO ==========
         'inicio': {
             id: 'inicio',
-            text: 'Eres un desarrollador novato. Una noche, mientras revisas código legacy, encuentras un archivo oculto llamado "proyecto_alfa.exe". Al abrirlo, ves un mensaje críptico: "El sistema colapsará en 24 horas si no se aplica el parche correcto." Tienes dos opciones:',
+            text: 'Eres un barista aprendiz en una cafetería de especialidad. Hoy llega un cliente muy exigente que pide "el mejor café de tu vida". Tienes que decidir cada paso para impresionarlo. ¿Por dónde empiezas?',
             options: [
-                { text: '🔍 Analizar el código del archivo', nextScene: 'analizar', esFinal: false },
-                { text: '🚨 Alertar al equipo de seguridad', nextScene: 'alertar', esFinal: false }
+                { text: '🌱 Seleccionar los granos de café', nextScene: 'seleccion_grano', esFinal: false },
+                { text: '⚙️ Revisar el equipo de preparación', nextScene: 'revisar_equipo', esFinal: false }
             ]
         },
-        // Escena: analizar el código
-        'analizar': {
-            id: 'analizar',
-            text: 'Decides abrir el archivo en un editor hexadecimal. Descubres que el código contiene una vulnerabilidad crítica en la autenticación. Puedes intentar parchearla por tu cuenta o pedir ayuda a un experto.',
+
+        // ========== RAMA: SELECCIONAR GRANO ==========
+        'seleccion_grano': {
+            id: 'seleccion_grano',
+            text: 'Tienes dos tipos de granos disponibles: Arábica de Etiopía (afrutado y ácido) y Robusta de Vietnam (fuerte y amargo). ¿Cuál eliges?',
             options: [
-                { text: '🛠️ Intentar parchear el código solo', nextScene: 'parche_solo', esFinal: false },
-                { text: '👨‍💻 Consultar a un experto en seguridad', nextScene: 'consulta_experto', esFinal: false }
+                { text: '🇪🇹 Arábica etíope', nextScene: 'arabica', esFinal: false },
+                { text: '🇻🇳 Robusta vietnamita', nextScene: 'robusta', esFinal: false }
             ]
         },
-        // Escena: alertar al equipo
-        'alertar': {
-            id: 'alertar',
-            text: 'Envías un correo urgente al equipo de seguridad. Ellos responden que ya lo sabían, pero que no tienen recursos para solucionarlo. Te piden que "hagas lo que puedas" con el tiempo restante. ¿Qué haces?',
+
+        // ========== RAMA: REVISAR EQUIPO ==========
+        'revisar_equipo': {
+            id: 'revisar_equipo',
+            text: 'Revisas la máquina de espresso, la prensa francesa y la V60. Todas están en buen estado, pero cada una da un perfil de sabor diferente. ¿Qué método usas?',
             options: [
-                { text: '📚 Investigar en foros de programación', nextScene: 'investigar_foros', esFinal: false },
-                { text: '💻 Escribir un script de emergencia', nextScene: 'script_emergencia', esFinal: false }
+                { text: '☕ Espresso', nextScene: 'espresso', esFinal: false },
+                { text: '🫗 Prensa francesa', nextScene: 'francesa', esFinal: false },
+                { text: '🧪 V60 (filtro de papel)', nextScene: 'v60', esFinal: false }
             ]
         },
-        // Finales (nextScene = null)
-        'parche_solo': {
-            id: 'parche_solo',
-            text: 'Trabajas toda la noche y logras aplicar un parche que estabiliza el sistema. El equipo te felicita, pero te das cuenta de que descuidaste tu salud. FINAL: "El héroe solitario"',
+
+        // ========== SUB-RAMAS DE GRANO ==========
+        'arabica': {
+            id: 'arabica',
+            text: 'Eliges el Arábica etíope. Su acidez brillante y notas de frutos rojos son prometedoras. Ahora debes decidir el tueste: ¿claro o medio?',
+            options: [
+                { text: '🔥 Tueste claro (más acidez)', nextScene: 'tueste_claro', esFinal: false },
+                { text: '🔥 Tueste medio (equilibrio)', nextScene: 'tueste_medio', esFinal: false }
+            ]
+        },
+
+        'robusta': {
+            id: 'robusta',
+            text: 'Optas por el Robusta vietnamita. Es más fuerte y con cafeína extra. Para suavizarlo, puedes molerlo más grueso o añadir un toque de leche. ¿Qué haces?',
+            options: [
+                { text: '⚙️ Molienda gruesa', nextScene: 'molienda_gruesa', esFinal: false },
+                { text: '🥛 Añadir leche vaporizada', nextScene: 'leche_robusta', esFinal: false }
+            ]
+        },
+
+        // ========== SUB-RAMAS DE EQUIPO ==========
+        'espresso': {
+            id: 'espresso',
+            text: 'Usas la máquina de espresso. La presión es clave. ¿Qué presión eliges? (9 bares es estándar, 12 bares da más cuerpo)',
+            options: [
+                { text: '⚡ 9 bares (estándar)', nextScene: 'espresso_9', esFinal: false },
+                { text: '💪 12 bares (intenso)', nextScene: 'espresso_12', esFinal: false }
+            ]
+        },
+
+        'francesa': {
+            id: 'francesa',
+            text: 'La prensa francesa necesita un tiempo de extracción preciso. ¿Cuánto tiempo dejas reposar el café?',
+            options: [
+                { text: '⏱️ 3 minutos (cuerpo ligero)', nextScene: 'francesa_3', esFinal: false },
+                { text: '⏱️ 5 minutos (cuerpo completo)', nextScene: 'francesa_5', esFinal: false }
+            ]
+        },
+
+        'v60': {
+            id: 'v60',
+            text: 'La V60 requiere un vertido controlado. ¿Cómo viertes el agua?',
+            options: [
+                { text: '💧 Vertido continuo y lento', nextScene: 'v60_lento', esFinal: false },
+                { text: '💧 Vertido por pulsos', nextScene: 'v60_pulsos', esFinal: false }
+            ]
+        },
+
+        // ========== MÁS ESCENAS INTERMEDIAS ==========
+        'tueste_claro': {
+            id: 'tueste_claro',
+            text: 'El tueste claro resalta las notas frutales. Ahora debes elegir la molienda: ¿fina o media?',
+            options: [
+                { text: '🔪 Molienda fina', nextScene: 'fina_arabica', esFinal: false },
+                { text: '🔪 Molienda media', nextScene: 'media_arabica', esFinal: false }
+            ]
+        },
+
+        'tueste_medio': {
+            id: 'tueste_medio',
+            text: 'El tueste medio da un equilibrio entre acidez y cuerpo. ¿Qué temperatura de agua usas?',
+            options: [
+                { text: '🌡️ 92°C', nextScene: 'temp_92', esFinal: false },
+                { text: '🌡️ 96°C', nextScene: 'temp_96', esFinal: false }
+            ]
+        },
+
+        'molienda_gruesa': {
+            id: 'molienda_gruesa',
+            text: 'Mueles grueso para reducir la amargor. El café sale suave pero con poco cuerpo. El cliente lo prueba y...',
+            options: [
+                { text: '😐 Le parece aceptable', nextScene: 'final_aceptable', esFinal: true },
+                { text: '😍 Le encanta la suavidad', nextScene: 'final_encanta', esFinal: true }
+            ]
+        },
+
+        'leche_robusta': {
+            id: 'leche_robusta',
+            text: 'Añades leche vaporizada al Robusta. La combinación es cremosa pero la leche tapa el sabor. ¿Qué haces?',
+            options: [
+                { text: '🍯 Añadir un toque de canela', nextScene: 'final_canela', esFinal: false },
+                { text: '🍫 Rallar chocolate amargo', nextScene: 'final_chocolate', esFinal: false }
+            ]
+        },
+
+        'espresso_9': {
+            id: 'espresso_9',
+            text: 'El espresso a 9 bares sale equilibrado. El cliente lo prueba y pide algo más intenso. ¿Qué haces?',
+            options: [
+                { text: '🔄 Ofrecer un ristretto', nextScene: 'final_ristretto', esFinal: false },
+                { text: '💧 Añadir un poco de agua caliente (Americano)', nextScene: 'final_americano', esFinal: false }
+            ]
+        },
+
+        'espresso_12': {
+            id: 'espresso_12',
+            text: 'El espresso a 12 bares es muy intenso y con crema espesa. El cliente queda sorprendido. Le encanta. ¡Éxito!',
+            options: [], // Final directo
+            esFinal: true
+        },
+
+        'francesa_3': {
+            id: 'francesa_3',
+            text: '3 minutos dan un café ligero y suave. El cliente lo disfruta pero pide más cuerpo. Le ofreces otro con 5 minutos.',
+            options: [
+                { text: '🔄 Hacer otro con 5 minutos', nextScene: 'francesa_5', esFinal: false },
+                { text: '🫗 Añadir un poco de crema', nextScene: 'final_crema', esFinal: false }
+            ]
+        },
+
+        'francesa_5': {
+            id: 'francesa_5',
+            text: '5 minutos dan un café con cuerpo y sedoso. El cliente queda satisfecho. ¡Gran trabajo!',
             options: [],
             esFinal: true
         },
-        'consulta_experto': {
-            id: 'consulta_experto',
-            text: 'El experto revisa tu análisis y te guía para implementar una solución robusta. El sistema se recupera y ganas el respeto de tus colegas. FINAL: "El aprendiz sabio"',
+
+        'v60_lento': {
+            id: 'v60_lento',
+            text: 'Vertido lento y constante. El café queda limpio y brillante. El cliente lo describe como "perfecto". ¡Lo lograste!',
             options: [],
             esFinal: true
         },
-        'investigar_foros': {
-            id: 'investigar_foros',
-            text: 'Encuentras un hilo de un foro donde alguien tuvo un problema similar. Sigues los pasos y logras restaurar el sistema a tiempo. FINAL: "El investigador"',
+
+        'v60_pulsos': {
+            id: 'v60_pulsos',
+            text: 'Vertido por pulsos. El café tiene más capas de sabor, pero el cliente lo encuentra confuso. No le gusta.',
+            options: [], // Final malo
+            esFinal: true
+        },
+
+        'fina_arabica': {
+            id: 'fina_arabica',
+            text: 'Molienda fina para Arábica. Extracción rápida, pero el café sale demasiado ácido. El cliente frunce el ceño.',
+            options: [], // Final malo
+            esFinal: true
+        },
+
+        'media_arabica': {
+            id: 'media_arabica',
+            text: 'Molienda media. El café tiene el punto justo de acidez y dulzor. El cliente pide otro. ¡Triunfo!',
             options: [],
             esFinal: true
         },
-        'script_emergencia': {
-            id: 'script_emergencia',
-            text: 'Escribes un script que automatiza el parche, pero olvidas probarlo en un entorno seguro. El script causa un error crítico y el sistema colapsa. FINAL: "El apresurado"',
+
+        'temp_92': {
+            id: 'temp_92',
+            text: '92°C es ideal para Arábica medio. El café está perfecto. El cliente te da una propina generosa.',
+            options: [],
+            esFinal: true
+        },
+
+        'temp_96': {
+            id: 'temp_96',
+            text: '96°C quema los aceites del Arábica. El café sale amargo y el cliente se queja. Mala elección.',
+            options: [],
+            esFinal: true
+        },
+
+        // ========== FINALES ADICIONALES ==========
+        'final_aceptable': {
+            id: 'final_aceptable',
+            text: 'El cliente dice que está bien, pero no impresionado. Te pide la cuenta. FINAL: "Aceptable pero olvidable".',
+            options: [],
+            esFinal: true
+        },
+
+        'final_encanta': {
+            id: 'final_encanta',
+            text: 'El cliente queda fascinado con la suavidad del Robusta molido grueso. Dice que es el mejor café que ha probado. ¡Éxito! FINAL: "El suave ganador".',
+            options: [],
+            esFinal: true
+        },
+
+        'final_canela': {
+            id: 'final_canela',
+            text: 'La canela le da un toque cálido y especiado. El cliente lo adora. FINAL: "El toque canela".',
+            options: [],
+            esFinal: true
+        },
+
+        'final_chocolate': {
+            id: 'final_chocolate',
+            text: 'El chocolate amargo realza el sabor del Robusta. El cliente pide la receta. FINAL: "El maestro chocolatero".',
+            options: [],
+            esFinal: true
+        },
+
+        'final_ristretto': {
+            id: 'final_ristretto',
+            text: 'Haces un ristretto con la misma dosis pero menos agua. Es intenso y concentrado. El cliente lo aprueba. FINAL: "El ristretto salvador".',
+            options: [],
+            esFinal: true
+        },
+
+        'final_americano': {
+            id: 'final_americano',
+            text: 'El Americano diluye el espresso, pero el cliente quería intensidad. No le gusta. FINAL: "El agua que arruinó todo".',
+            options: [],
+            esFinal: true
+        },
+
+        'final_crema': {
+            id: 'final_crema',
+            text: 'Añades crema de leche al café de 3 minutos. Ahora tiene cuerpo y suavidad. El cliente sonríe. FINAL: "La crema salvadora".',
             options: [],
             esFinal: true
         }
-    };
+
+    }; // Fin de scenes
 
     /*
     ================================================================
-    VARIABLES DE ESTADO DEL JUEGO
+    VARIABLES DE ESTADO
     ================================================================
     */
-    var currentSceneId = 'inicio';        // ID de la escena actual
-    var decisionCount = 0;                // Numero de decisiones tomadas
-    var gameEnded = false;               // Bandera para saber si termino
-    var processing = false;              // Bandera para evitar clics multiples durante transiciones
+    var currentSceneId = 'inicio';
+    var decisionCount = 0;
+    var gameEnded = false;
+    var processing = false;
 
-    // Referencias a elementos del DOM
     var storyTextEl = document.getElementById('story-text');
     var optionsContainer = document.getElementById('options-container');
     var decisionCountEl = document.getElementById('decision-count');
@@ -100,129 +274,82 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /*
     ================================================================
-    FUNCION: cargarEscena
-    DESCRIPCION: Carga una escena por su ID. Actualiza el texto,
-    genera los botones de opciones, maneja los finales y actualiza
-    el contador.
-    PARAMETROS:
-    - sceneId: string con el ID de la escena a cargar.
-    RETORNO: ninguno.
+    FUNCIONES PRINCIPALES
     ================================================================
     */
     function cargarEscena(sceneId) {
-        // Si ya se esta procesando una transicion, ignorar
         if (processing) return;
-        processing = true; // Bloquea nuevos clics
+        processing = true;
 
-        // Obtiene la escena del objeto scenes
         var scene = scenes[sceneId];
         if (!scene) {
-            // Si no existe, muestra un mensaje de error
             storyTextEl.textContent = 'Error: escena no encontrada.';
             processing = false;
             return;
         }
 
-        // Actualiza el texto de la historia (con efecto de fade simple)
-        storyTextEl.style.opacity = '0';    // Oculta el texto
+        storyTextEl.style.opacity = '0';
         setTimeout(function() {
-            // Si es un final, añade el numero de decisiones al texto
             var finalText = scene.text;
             if (scene.esFinal || scene.options.length === 0) {
-                // Añade el contador actual al texto del final
                 finalText += ' (Has tomado ' + decisionCount + ' decisión' + (decisionCount !== 1 ? 'es' : '') + ').';
             }
-            storyTextEl.textContent = finalText; // Cambia el texto
-            storyTextEl.style.opacity = '1';     // Lo muestra
+            storyTextEl.textContent = finalText;
+            storyTextEl.style.opacity = '1';
         }, 200);
 
-        // Limpia el contenedor de opciones
         optionsContainer.innerHTML = '';
 
-        // Si es un final (esFinal === true o no tiene opciones)
         if (scene.esFinal || scene.options.length === 0) {
             gameEnded = true;
-            // Muestra el boton de reinicio
             resetBtn.style.display = 'block';
-            // Añade una clase de pulso al texto para enfatizar
             storyTextEl.classList.add('pulse');
         } else {
             gameEnded = false;
             resetBtn.style.display = 'none';
             storyTextEl.classList.remove('pulse');
-            // Genera los botones de opcion
             scene.options.forEach(function(option) {
                 var btn = document.createElement('button');
-                // Crea un elemento button
                 btn.textContent = option.text;
-                // Asigna el texto de la opcion
                 btn.className = 'option-btn';
-                // Clase CSS para estilos
                 btn.dataset.next = option.nextScene;
-                // Guarda el ID de la siguiente escena en un atributo data
-                // Añade evento click
                 btn.addEventListener('click', function() {
-                    // Si el juego ya termino o esta procesando, no hace nada
                     if (gameEnded || processing) return;
-                    // Incrementa el contador de decisiones
                     decisionCount++;
                     decisionCountEl.textContent = decisionCount;
-                    // Carga la siguiente escena
                     var next = this.dataset.next;
                     if (next) {
                         cargarEscena(next);
                     } else {
-                        // Si no hay siguiente, se considera final (pero no deberia ocurrir)
-                        cargarEscena(sceneId); // Recarga la misma (pero ya es final)
+                        cargarEscena(sceneId);
                     }
                 });
                 optionsContainer.appendChild(btn);
-                // Agrega el boton al contenedor
             });
         }
 
-        // Libera la bandera de procesamiento (despues de un pequeño retraso para permitir la transicion)
         setTimeout(function() {
             processing = false;
         }, 300);
     }
 
-    /*
-    ================================================================
-    FUNCION: reiniciarJuego
-    DESCRIPCION: Reinicia el juego a la escena inicial, resetea
-    el contador y oculta el boton de reinicio.
-    PARAMETROS: ninguno.
-    RETORNO: ninguno.
-    ================================================================
-    */
     function reiniciarJuego() {
-        // Evita reiniciar mientras se procesa
         if (processing) return;
-        // Reinicia variables de estado
         currentSceneId = 'inicio';
         decisionCount = 0;
         gameEnded = false;
-        // Actualiza el contador visual
         decisionCountEl.textContent = '0';
-        // Oculta el boton de reinicio
         resetBtn.style.display = 'none';
-        // Quita la clase pulse del texto
         storyTextEl.classList.remove('pulse');
-        // Carga la escena inicial
         cargarEscena('inicio');
     }
 
     /*
     ================================================================
-    CONFIGURACION DE EVENTOS INICIALES
+    EVENTOS E INICIO
     ================================================================
     */
-    // Evento para el boton de reinicio
     resetBtn.addEventListener('click', reiniciarJuego);
-
-    // Carga la primera escena al iniciar
     cargarEscena('inicio');
 
 });
-// Fin del bloque DOMContentLoaded
