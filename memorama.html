@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Memorama de programación</title>
+    <link rel="stylesheet" href="./static/styles/arcade.css">
+</head>
+<body>
+    <main class="game-card">
+        <h1>🧠 Memorama</h1>
+        <p class="lead">Encuentra las ocho parejas relacionadas con programación.</p>
+        <div class="toolbar"><strong>Movimientos: <span id="moves">0</span></strong><strong>Parejas: <span id="pairs">0</span>/8</strong></div>
+        <p class="status" id="memoryStatus" aria-live="polite">Selecciona una tarjeta.</p>
+        <div class="memory-grid" id="memoryGrid" aria-label="Tablero de memorama"></div>
+        <button id="memoryReset">Reiniciar memorama</button>
+        <br><a class="back-link" href="./index.html">← Volver al menú</a>
+    </main>
+    <script src="./static/js/memorama.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dibujando y programando</title>
+    <link rel="stylesheet" href="./static/styles/arcade.css">
+</head>
+<body>
+    <main class="game-card">
+        <h1>🎨 Dibujando y programando</h1>
+        <p class="lead">Dibuja con el dedo o el mouse y guarda tu creación.</p>
+        <div class="toolbar">
+            <label>Color <input id="drawColor" type="color" value="#1c64f2"></label>
+            <label>Grosor <input id="drawSize" type="range" min="2" max="40" value="8"></label>
+            <button id="drawEraser" class="secondary">Borrador</button>
+            <button id="drawClear" class="secondary">Limpiar</button>
+            <button id="drawSave">Guardar dibujo</button>
+        </div>
+        <p class="status" id="drawStatus" aria-live="polite">Lienzo listo.</p>
+        <div class="canvas-wrap" style="width:min(100%,720px)"><canvas id="drawCanvas" width="720" height="500"></canvas></div>
+        <a class="back-link" href="./index.html">← Volver al menú</a>
+    </main>
+    <script src="./static/js/dibujo.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="./static/styles/arcade.css">
+</head>
+<body>
+    <main class="game-card">
+        <h1>🐦 Flappy Bird</h1>
+        <p class="lead">Toca el juego, usa el botón o presiona Espacio para volar.</p>
+        <div class="toolbar"><strong>Puntos: <span id="flappyScore">0</span></strong><strong>Récord: <span id="flappyBest">0</span></strong></div>
+        <p class="status" id="flappyStatus" aria-live="polite">Pulsa comenzar.</p>
+        <div class="canvas-wrap"><canvas id="flappyCanvas" width="360" height="540"></canvas></div>
+        <div class="toolbar"><button id="flappyStart">Comenzar / reiniciar</button><button id="flappyJump" class="secondary">Volar</button></div>
+        <a class="back-link" href="./index.html">← Volver al menú</a>
+    </main>
+    <script src="./static/js/flappy.js"></script>
+</body>
+</html>
