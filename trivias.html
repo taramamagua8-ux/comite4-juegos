@@ -1,42 +1,28 @@
 <!DOCTYPE html>
-<!--
-================================================================================
-ARCHIVO: trivias.html
-DESCRIPCION: Estructura principal del juego de trivias sobre el Mundial de fútbol,
-todas las preguntas se muestran a la vez en la página, cada una con sus opciones.
-Al hacer clic en una opción, se bloquea la pregunta y se muestra feedback visual
-(correcto/incorrecto). El puntaje y progreso se actualizan en tiempo real.
-================================================================================
--->
 <html lang="es">
 <head>
-    <!-- METADATOS BASICOS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivias del Mundial</title>
 
-    <!-- ================================================================
-        REFERENCIA A LA HOJA DE ESTILOS EXTERNA (url_for para Flask)
-        ================================================================ -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/trivias.css') }}">
-    <!-- Vincula el archivo trivias.css desde static/styles/ -->
+    <!-- CSS relativo (sin Flask) -->
+    <link rel="stylesheet" href="static/styles/trivias.css">
 
-    <!-- Enlace a FontAwesome para iconos (opcional, se usa para el boton flotante) -->
+    <!-- FontAwesome (para el icono del botón flotante) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-    <!-- ENCABEZADO: titulo y descripcion -->
+    <!-- ENCABEZADO -->
     <header>
         <h1>⚽ Trivias del Mundial</h1>
         <p>Responde las 10 preguntas sobre la historia del fútbol mundialista.</p>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL: contiene el quiz y los resultados -->
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
 
-        <!-- SECCION DEL QUIZ: contiene todas las preguntas -->
+        <!-- SECCIÓN DEL QUIZ -->
         <section id="quiz">
 
             <!-- PREGUNTA 1 -->
@@ -149,9 +135,9 @@ Al hacer clic en una opción, se bloquea la pregunta y se muestra feedback visua
                 </ul>
             </div>
 
-        </section>  <!-- Fin de la sección del quiz -->
+        </section>  <!-- Fin de #quiz -->
 
-        <!-- SECCION DE RESULTADOS: muestra puntaje, progreso y mensaje final -->
+        <!-- SECCIÓN DE RESULTADOS -->
         <section id="resultado">
             <h2>Tu puntaje</h2>
             <p><strong>Correctas:</strong> <span id="puntaje">0</span> de <span id="total">10</span></p>
@@ -162,23 +148,21 @@ Al hacer clic en una opción, se bloquea la pregunta y se muestra feedback visua
 
     </main>
 
-    <!-- BOTON FLOTANTE PARA VOLVER AL MENU PRINCIPAL -->
+    <!-- BOTÓN FLOTANTE PARA VOLVER AL MENÚ -->
     <div class="quiz-eco-btn-container">
-        <!-- El boton redirige a la raiz '/' usando url_for de Flask -->
-        <button class="quiz-eco-btn" onclick="window.location.href='{{ url_for('menu') }}'">
+        <!-- Ahora apunta a index.html (sin Flask) -->
+        <button class="quiz-eco-btn" onclick="window.location.href='index.html'">
             <i class="fas fa-futbol"></i> Volver al menú
         </button>
     </div>
 
-    <!-- PIE DE PAGINA -->
+    <!-- PIE DE PÁGINA -->
     <footer>
         <p>⚽ Comité 4 · Trivias del Mundial ⚽</p>
     </footer>
 
-    <!-- ================================================================
-        REFERENCIA AL ARCHIVO DE JAVASCRIPT EXTERNO (url_for)
-        ================================================================ -->
-    <script src="{{ url_for('static', filename='js/trivias.js') }}"></script>
+    <!-- JavaScript relativo (sin Flask) -->
+    <script src="static/js/trivias.js"></script>
 
 </body>
 </html>
