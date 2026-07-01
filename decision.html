@@ -1,19 +1,11 @@
 <!DOCTYPE html>
-<!--
-================================================================================
-Estructura principal del juego de decision "El Café Perfecto".
-Incluye un botón flotante para volver al menú principal.
-================================================================================
--->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Café Perfecto · Juego de Decisión</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/decision.css') }}">
-    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="static/styles/decision.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="container">
@@ -30,15 +22,14 @@ Incluye un botón flotante para volver al menú principal.
         <div class="footer">⚡ Juego de Decisión ⚡</div>
     </div>
 
-    <!-- ================================================================
-        BOTON FLOTANTE PARA VOLVER AL MENU PRINCIPAL
-        ================================================================ -->
+    <!-- BOTÓN FLOTANTE PARA VOLVER AL MENÚ PRINCIPAL -->
     <div class="quiz-eco-btn-container">
-        <button class="quiz-eco-btn" onclick="window.location.href='{{ url_for('menu') }}'">
+        <button class="quiz-eco-btn" onclick="window.location.href='index.html'">
             <i class="fas fa-home"></i> Volver al menú
         </button>
     </div>
 
-    <script src="{{ url_for('static', filename='js/decision.js') }}"></script>
+    <script src="static/js/decision.js"></script>
 </body>
 </html>
+
